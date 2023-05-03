@@ -2,75 +2,51 @@ package com.tcc.collecor.entities;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_users")
-public class User implements Serializable{
+@Table(name = "favorite_tb")
+public class Favorite implements Serializable{
 
     private static final long serialVersionUID=1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String email;
-    private String imgProfile;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "userId")
-    private Favorite favoriteId;
+    
+    @OneToOne
+    @JoinTable(name = "user_favorite")
+    private User userId;
 
-    public User() {
+    public Favorite() {
     }
 
-    public User(String username, String email, String imgProfile) {
-        this.username = username;
-        this.email = email;
-        this.imgProfile = imgProfile;
+    public Favorite(User userid) {
+        this.userId = userid;
     }
 
     
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
-    public String getUsername() {
-        return username;
-    }
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getImgProfile() {
-        return imgProfile;
-    }
-    public void setImgProfile(String imgProfile) {
-        this.imgProfile = imgProfile;
+
+    public User getUserid() {
+        return userId;
     }
 
-    
-
-    public Favorite getFavoriteId() {
-        return favoriteId;
-    }
-
-    public void setFavoriteId(Favorite favoriteId) {
-        this.favoriteId = favoriteId;
+    public void setUserid(User userid) {
+        this.userId = userid;
     }
 
     @Override
@@ -78,6 +54,7 @@ public class User implements Serializable{
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((userId == null) ? 0 : userId.hashCode());
         return result;
     }
 
@@ -89,16 +66,19 @@ public class User implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        User other = (User) obj;
+        Favorite other = (Favorite) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
             return false;
+        if (userId == null) {
+            if (other.userId != null)
+                return false;
+        } else if (!userId.equals(other.userId))
+            return false;
         return true;
     }
 
-    
-    
     
 }
