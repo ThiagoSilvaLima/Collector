@@ -75,6 +75,7 @@ public class Product {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((type == null) ? 0 : type.hashCode());
         return result;
     }
     @Override
@@ -91,8 +92,14 @@ public class Product {
                 return false;
         } else if (!id.equals(other.id))
             return false;
+        if (type == null) {
+            if (other.type != null)
+                return false;
+        } else if (!type.equals(other.type))
+            return false;
         return true;
     }
-
+    
+    
     
 }
