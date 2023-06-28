@@ -20,7 +20,7 @@ public class ProductService {
         return pRepositories.findAll();
     }
 
-    public List<Product> findByType(@PathVariable Long type ) {
+    public List<Product> findByType(@PathVariable Integer type ) {
         List<Product> obj = pRepositories.findAll();
         List<Product> result = new ArrayList<>();
         
@@ -31,4 +31,5 @@ public class ProductService {
         }
         return result;
     }
+
 }

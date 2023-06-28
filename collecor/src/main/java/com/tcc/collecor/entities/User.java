@@ -25,6 +25,7 @@ public class User implements Serializable{
     private String username;
     private String email;
     private String imgProfile;
+    private String description;
 
     @ManyToMany
     @JoinTable(name = "user_product_favorite",
@@ -35,10 +36,11 @@ public class User implements Serializable{
     public User() {
     }
 
-    public User(String username, String email, String imgProfile) {
+    public User(String username, String email, String imgProfile, String description) {
         this.username = username;
         this.email = email;
         this.imgProfile = imgProfile;
+        this.description = description;
     }
 
     public Long getId() {
@@ -65,7 +67,13 @@ public class User implements Serializable{
     public void setImgProfile(String imgProfile) {
         this.imgProfile = imgProfile;
     }
-    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public List<Product> getFavoritesproducts() {
         return favoritesproducts;

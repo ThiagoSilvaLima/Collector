@@ -26,7 +26,7 @@ public class ProductResources {
     }
 
     @GetMapping("/findType/{type}")
-    public ResponseEntity<List<Product>> findByType (@PathVariable Long type) {
+    public ResponseEntity<List<Product>> findByType (@PathVariable Integer type) {
         List<Product> list = pService.findByType(type);
         return ResponseEntity.ok().body(list);
     }
