@@ -1,11 +1,15 @@
 package com.tcc.collecor.entities;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tcc.collecor.enums.TypeEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +24,9 @@ public class Product {
     private String link;
     private Integer type;
     
+    @JsonIgnore
+    @ManyToMany(mappedBy = "favoritesproducts")
+    private List<User> userfavorite;
     //Constructors
     public Product() {
     }
@@ -56,7 +63,13 @@ public class Product {
     public void setType(TypeEnum type) {
         this.type = type.getCode();
     }
-
+    
+    public List<User> getUserfavorite() {
+        return userfavorite;
+    }
+    public void setUserfavorite(List<User> userfavorite) {
+        this.userfavorite = userfavorite;
+    }
     @Override
     public int hashCode() {
         final int prime = 31;

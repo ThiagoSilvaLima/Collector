@@ -1,14 +1,16 @@
 package com.tcc.collecor.entities;
 
 import java.io.Serializable;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,9 +26,11 @@ public class User implements Serializable{
     private String email;
     private String imgProfile;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "userId")
-    private Favorite favoriteId;
+    @ManyToMany
+    @JoinTable(name = "user_product_favorite",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> favoritesproducts = new ArrayList<>();
 
     public User() {
     }
@@ -37,7 +41,6 @@ public class User implements Serializable{
         this.imgProfile = imgProfile;
     }
 
-    
     public Long getId() {
         return id;
     }
@@ -62,15 +65,14 @@ public class User implements Serializable{
     public void setImgProfile(String imgProfile) {
         this.imgProfile = imgProfile;
     }
-
     
 
-    public Favorite getFavoriteId() {
-        return favoriteId;
+    public List<Product> getFavoritesproducts() {
+        return favoritesproducts;
     }
 
-    public void setFavoriteId(Favorite favoriteId) {
-        this.favoriteId = favoriteId;
+    public void setFavoritesproducts(List<Product> favoritesproducts) {
+        this.favoritesproducts = favoritesproducts;
     }
 
     @Override
