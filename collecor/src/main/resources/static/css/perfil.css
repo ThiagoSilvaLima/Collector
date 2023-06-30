@@ -1,0 +1,8 @@
+body{
+  border: none;
+  background-color: #DAE3E7;
+}
+.row{
+
+  --bs-gutter-x: 0;
+}

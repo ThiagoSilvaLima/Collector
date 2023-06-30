@@ -1,0 +1,117 @@
+body{
+  border: none;
+  background-color: #DAE3E7;
+}
+.container {
+    max-width: 960px;
+  }
+  .navbar-survival101 {
+    background-color:#041642;
+  }
+.navbar-survival101 .navbar-brand {
+    margin-right: 2.15rem;
+    padding: 3px 0 0 0;
+    line-height: 36px;
+  }  
+  .navbar-expand-lg .navbar-nav .nav-link {
+    color: #fff;
+  }
+  @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: .7rem;
+      padding-left: .7rem;
+    }
+    
+    .search-box {
+      width: 300px !important;
+    }
+  }
+  .caroulsel {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 0 5px 5px;
+  }
+  
+  .caroulsel-wrap {
+    white-space: nowrap;
+    font-size: 0;
+  }
+  
+  .caroulsel-wrap a {
+    display: inline-block;
+    width: 134px;
+    height: 92px;
+    background-color: silver;
+    border: #ccc 1px solid;
+    margin-right: 5px;
+  }
+  
+  .search{
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+      
+    }
+
+    .search input{
+
+     height: 60px;
+     text-indent: 25px;
+     border: 2px solid #d6d4d4;
+
+
+    }
+
+
+    .search input:focus{
+
+     box-shadow: none;
+     border: 2px solid blue;
+
+
+    }
+
+    .search .fa-search{
+
+     position: absolute;
+     top: 20px;
+     left: 16px;
+
+    }
+
+    .search button{
+
+     position: absolute;
+     top: 5px;
+     right: 5px;
+     height: 50px;
+     width: 110px;
+     background: orange;
+
+    }
+  
+  .btn-tab{
+    color: white;
+    background-color: #041642;
+  }
+  .btn-tab:hover{
+    color: orange;
+    background-color: #041642;
+  }
+  .btn-tab:focus{
+    color: white;
+    background-color: #60a4db;
+  }
+
+  footer{
+    height: 30px;
+  }
+  div{
+    border: #041642;
+  }
+
+
+  .row{
+
+    --bs-gutter-x: 0;
+  }
+

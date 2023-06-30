@@ -26,6 +26,7 @@ public class User implements Serializable{
     private String email;
     private String imgProfile;
     private String description;
+    private String password;
 
     @ManyToMany
     @JoinTable(name = "user_product_favorite",
@@ -36,18 +37,22 @@ public class User implements Serializable{
     public User() {
     }
 
-    public User(String username, String email, String imgProfile, String description) {
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(String username, String email, String imgProfile, String description, String password) {
         this.username = username;
         this.email = email;
         this.imgProfile = imgProfile;
         this.description = description;
+        this.password = password;
     }
 
     public Long getId() {
         return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
     }
     public String getUsername() {
         return username;
@@ -81,6 +86,14 @@ public class User implements Serializable{
 
     public void setFavoritesproducts(List<Product> favoritesproducts) {
         this.favoritesproducts = favoritesproducts;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
