@@ -32,8 +32,8 @@ public class UserResources {
         List<User> list = uService.findAll();
         return ResponseEntity.ok().body(list);
     }
-    @PostMapping(value = "/insert", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ModelAndView insert(@RequestParam("username") String param1, @RequestParam("email") String param2, @RequestParam("password") String param3) {
+    @PostMapping(value = "/insert", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE )
+    public ModelAndView register(@RequestParam("username") String param1, @RequestParam("email") String param2, @RequestParam("password") String param3) {
         User user = new User();
         user.setUsername(param1);
         user.setEmail(param2);
@@ -41,7 +41,7 @@ public class UserResources {
         
         User obj = uService.createUser(user);
         ResponseEntity.ok().body(obj);
-    
+        
         return new ModelAndView("redirect:/perfil");
     }
     @PutMapping("/addFavorite/{userId}/{prodId}")

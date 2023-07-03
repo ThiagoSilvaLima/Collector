@@ -40,4 +40,12 @@
     background-color: silver;
     border: #ccc 1px solid;
     margin-right: 5px;
-}  
+}
+#btnLogin{
+    color: #C6DDFF;
+    cursor: pointer;
+}
+#btnSigin{
+    color: #C6DDFF;
+    cursor: pointer;
+}

@@ -1,0 +1,41 @@
+body{
+  border: none;
+  background-color: #DAE3E7;
+}
+.card-img-top{
+  height: 400px;
+}
+.profile{
+  margin-top: -80px;
+  margin-bottom: 20px;
+  height: 200px;
+}
+.faixa{
+  background-color: #E7803D;
+  color: white;
+  width: 120px;
+}
+.row{
+  --bs-gutter-x: 0;
+}
+.card{
+  border: none;
+}
+.strip{
+  width: 100%;
+  background-color: #E7803D;
+  text-indent: 3%;
+}
+h3{
+  font-weight: bold;
+  font-size: 38px;
+  color: white;
+}
+.card-content{
+  width: 18rem;
+}
+.rounded-pill{
+  background-color: #E7803D;
+  color: white;
+  width: 120px;
+}

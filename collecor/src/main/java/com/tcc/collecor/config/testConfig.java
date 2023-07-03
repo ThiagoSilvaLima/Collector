@@ -23,14 +23,14 @@ public class testConfig implements CommandLineRunner {
     @Override
 	public void run(String... args) throws Exception {
 
-        User u1= new User("Joaquim","joaquim@gmail.com","link.com","Um carinha do interior","12345");
-        User u2= new User("Mario","quimario@gmail.com","quetecomeuatrazdoarmario.com","Um cara que dirige trator","7878");
+        User u1= new User("Joaquim","joaquim@gmail.com","12345");
+        User u2= new User("Mario","quimario@gmail.com","7878");
 
         uRepositories.saveAll(Arrays.asList(u1,u2));
 
         Product p1 = new Product("Jão e Maria", "Irmão e irma se perdem em uma floresta, e se encontram com uma cabana de doce","joaogomes.com", 1);
         Product p2 = new Product("Corvos e castelo", "Corvos negros sobrevoando um castelo negro", "images.com", 3);
-
+        
         pRepositories.saveAll(Arrays.asList(p1,p2));
 
         u1.getFavoritesproducts().add(p2);

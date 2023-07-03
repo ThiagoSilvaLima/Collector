@@ -12,6 +12,10 @@ public class PagesController {
     }
     @GetMapping("/perfil")
     public String perfil (){
-        return "perfil";
+        return "profile";
+    }
+    @GetMapping("/favoritos")
+    public String favoritos (){
+        return "favoritos";
     }
 }
