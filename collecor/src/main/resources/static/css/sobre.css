@@ -8,7 +8,7 @@ body{
     border-radius: 450px;
     margin-bottom: 30px;
     background-color: #fff;
-    width: 85%;
+    width: 100%;
    
 }  
 .card-box {
@@ -34,7 +34,7 @@ body{
     border: 2px solid #797979
 }
 .thumb-lg {
-    height: 125px;
+    
     width: 125px;
 }
 .img-thumbnail {
@@ -57,4 +57,14 @@ body{
 h4 {
     line-height: 22px;
     font-size: 18px;
+}
+#copy{
+    border-radius: 450px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    width: 70%;
+    text-indent: 2%;
+}
+img{
+    
 }
