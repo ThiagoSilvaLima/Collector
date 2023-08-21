@@ -22,4 +22,8 @@ public class PagesController {
     public String sobre (){
         return "sobre";
     }
+    @GetMapping("/home")
+    public String home (){
+        return "home";
+    }
 }
