@@ -18,4 +18,8 @@ public class PagesController {
     public String favoritos (){
         return "favoritos";
     }
+    @GetMapping("/sobre")
+    public String sobre (){
+        return "sobre";
+    }
 }
