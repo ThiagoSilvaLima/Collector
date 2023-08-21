@@ -1,13 +1,13 @@
 body{
     border: none;
-    background-color: #DAE3E7;
+    background-color: #0B0530;
   }
 
 .member-card{
     padding: 3px;
     border-radius: 450px;
     margin-bottom: 30px;
-    background-color: #fff;
+    background-color: #01002A;
     width: 100%;
    
 }  
@@ -15,7 +15,7 @@ body{
     padding: 30px;
     border-radius: 3px;
     margin-bottom: 30px;
-    background-color: #fff;
+    background-color: #01002A;
 }
 
 .social-links li a {
@@ -39,7 +39,7 @@ body{
 }
 .img-thumbnail {
     padding: .25rem;
-    background-color: #0f1738;
+    background-color: #030718;
     border: 1px solid #ffffff;
     border-radius: .25rem;
     max-width: 100%;
@@ -65,6 +65,9 @@ h4 {
     width: 70%;
     text-indent: 2%;
 }
-img{
-    
+h2{
+    color: white;
+}
+h4{
+    color: white;
 }
