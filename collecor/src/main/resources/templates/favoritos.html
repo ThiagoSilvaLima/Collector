@@ -18,7 +18,7 @@
     <!--navbar-->
     <div th:replace="~{fragments :: navbar}"></div>
     <!--pageContent-->
-    <div class="row mx-0 px-0">
+    <div class="row">
         <!--tabBar-->
         <div class="col-1 p-1 tabbar">
           <div class="col-12">
@@ -26,7 +26,6 @@
           </div>
           <div class="col-12">       
             <div class="d-grid gap-2 tab-buttons">
-              <br>
               <button type="button" class="btn py-0 btn-tab">Livros</button>
               <button type="button" class="btn py-0 btn-tab">Imagens</button>
               <button type="button" class="btn py-0 btn-tab">Videos</button>
@@ -42,13 +41,13 @@
           <div class="row height justify-content-center">
             <div class="col-md-6">
               <div class="search">
-                <input type="text" class="form-control form-input rounded-pill" placeholder="Encontrar algo..." style="background-color: #549FC1;">
+                <input type="text" class="form-control form-input rounded-pill" placeholder="Encontrar algo...">
                 <button class="btn btn-primary rounded-pill">Pesquisar</button>
               </div>
             </div>
           </div>
-          <div class="mt-3 mb-3" style="width: 100%; background-color: #E7803D;">
-            <p class="px-2" style="color: white; text-indent: 5%;">Favoritos</p>
+          <div class="mt-3 mb-3" style="width: 100%; background-color: transparent">
+            <p class="px-2" style="color: white; text-indent: 7%; font-size: 30px;">Favoritos</p>
           </div>
           <div class="colunmn col">
             <!--content-content-->

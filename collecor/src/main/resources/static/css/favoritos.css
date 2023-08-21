@@ -1,36 +1,31 @@
 body{
   border: none;
-  background-color: #DAE3E7;
+  background-color: #0B0530;
 }
 .tabbar{
-  background-color: #083470;
+  background-image: url('/imgs/favoritos/tabbar.jpg');
+
 }
 .img-fluid{
   width: 100%;
+  height: 100%;
 }
 .tab-buttons{
   width: 100%;
 }
 .search{
-  position: relative;
-  box-shadow: 0 0 40px rgba(51, 51, 51, .1);
-    
+  position: relative; 
   }
 
 .search input{
-
-  height: 60px;
+  height: 50px;
   text-indent: 25px;
-  border: 2px solid #d6d4d4;
+  border: none;
 }
-.search input:focus{
-
-  box-shadow: none;
-  border: 2px solid blue;
+.search input :hover{
+  background-color: #0B0530;
 }
-
 .search .fa-search{
-
   position: absolute;
   top: 20px;
   left: 16px;
@@ -40,9 +35,9 @@ body{
   position: absolute;
   top: 5px;
   right: 5px;
-  height: 50px;
+  height: 40px;
   width: 110px;
-  background: orange;
+  background: #4B18B0
 
 }
 input[type="button"] {

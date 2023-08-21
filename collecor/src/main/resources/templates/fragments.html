@@ -7,118 +7,118 @@
 </head>
 <body>
     <div th:fragment = "navbar">
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-survival101 p-">
-            <div class="container ">
-              
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              
-              <div class="container p-1">
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                  <div class="container">
-                    <ul class="navbar-nav justify-content-center">
-                      <li class="nav-item active">
-                        <a class="nav-link btnhome" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link btnloja" href="#">Loja</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link btnfavoritos" href="favoritos">Favoritos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link btnperfil" href="/perfil">Perfil <i class="ion-ios-arrow-down"></i></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link btnsobre" href="#">Sobre <i class="ion-ios-arrow-down"></i></a>
-                      </li>
-                      <li class="nav-item position-absolute end-0 ">
-                        <a class="nav-link" id="btnLogin">LOGIN <i class="ion-ios-arrow-down"></i></a>
-                      </li>
-                      <li class="nav-item position-absolute end-0 mx-5">
-                        <a class="nav-link mx-3" id="btnSigin">SIGIN <i class="ion-ios-arrow-down"></i></a>
-                      </li>
-                      <div id="loginModal" class="modal">
-                        <!-- Modal content login -->
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <div class="container">
-                              <div class="row">
-                                <div class="col-md-6 offset-md-3">
-                                  <div class="card my-5">
-                                    <form class="card-body cardbody-color p-lg-5">
-                          
-                                      <div class="text-center d-flex justify-content-center">
-                                        <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                                          width="200px" alt="profile">
-                                      </div>
-                                      <div class="mb-3">
-                                        <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                                          placeholder="Usuario">
-                                      </div>
-                                      <div class="mb-3">
-                                        <input type="password" class="form-control" id="password" placeholder="Senha">
-                                      </div>
-                                      <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Entrar</button></div>
-                                      <!--<div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
-                                        Registered? <a href="#" class="text-dark fw-bold"> Create an
-                                          Account</a>
-                                      </div>-->
-                                    </form>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white mx-3" style="font-family: Orbitron; font-size: 25px; font-style: normal; font-weight: 500; line-height: normal;" href="#">Visual Vision</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse">
+            <div class="navbar-nav">
+              <div class="container">
+                <ul class="navbar-nav d-flex justify-content-center">
+                  <li class="nav-item active">
+                    <a class="nav-link btnhome" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btnloja" href="/loja">Loja</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btnfavoritos" href="favoritos">Favoritos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btnperfil" href="/perfil">Perfil <i class="ion-ios-arrow-down"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btnsobre" href="#">Sobre <i class="ion-ios-arrow-down"></i></a>
+                  </li>
+                  <li class="nav-item position-absolute end-0 mx-3 ">
+                    <a class="nav-link" id="btnLogin">LOGIN <i class="ion-ios-arrow-down"></i></a>
+                  </li>
+                  <li class="nav-item position-absolute end-0 mx-5">
+                    <a class="nav-link mx-5" id="btnSigin">SIGN IN <i class="ion-ios-arrow-down"></i></a>
+                  </li>
+                  <div id="loginModal" class="modal">
+                    <!-- Modal content login -->
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <div class="container">
+                          <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                              <div class="card my-5">
+                                <form class="card-body cardbody-color p-lg-5">
+                      
+                                  <div class="text-center d-flex justify-content-center">
+                                    <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                      width="200px" alt="profile">
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div id="siginModal" class="modal">
-                        <div class="modal-content">
-                          <span class="close2 close">&times;</span>
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-6 offset-md-3">
-                                <div class="card my-5">              
-                                  <form class="card-body cardbody-color p-lg-5" method="post" action="/users/insert">
-                                    <div class="alert alert-success visually-hidden" role="alert">
-                                      Cadastro concluido como sucesso
-                                    </div>
-                                    <div class="text-center d-flex justify-content-center">
-                                      <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                                        width="200px" alt="profile">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                      <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Usuario" name="username" required>
-                                    </div>
-                                    <div class="mb-3">
-                                      <input type="text" class="form-control" id="email" placeholder="Email" pattern=".*@.*" name="email" required>
-                                    </div>
-                                    <div class="mb-3">
-                                      <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" placeholder="Senha" required>
-                                    </div>
-                                    <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Cadastrar</button></div>
-                                    <!--<div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
-                                      Registered? <a href="#" class="text-dark fw-bold"> Create an
-                                        Account</a>
-                                    </div>-->
-                                  </form>
-                                </div>
+                                  <div class="mb-3">
+                                    <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
+                                      placeholder="Usuario">
+                                  </div>
+                                  <div class="mb-3">
+                                    <input type="password" class="form-control" id="password" placeholder="Senha">
+                                  </div>
+                                  <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Entrar</button></div>
+                                  <!--<div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+                                    Registered? <a href="#" class="text-dark fw-bold"> Create an
+                                      Account</a>
+                                  </div>-->
+                                </form>
                               </div>
                             </div>
                           </div>
-                        </div> 
-                      </div>
-                    </ul>
+                        </div>
+                    </div>
                   </div>
-                </div>
+                  <div id="siginModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close2 close">&times;</span>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6 offset-md-3">
+                            <div class="card my-5">              
+                              <form class="card-body cardbody-color p-lg-5" method="post" action="/users/insert">
+                                <div class="alert alert-success visually-hidden" role="alert">
+                                  Cadastro concluido como sucesso
+                                </div>
+                                <div class="text-center d-flex justify-content-center">
+                                  <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                    width="200px" alt="profile">
+                                </div>
+                                
+                                <div class="mb-3">
+                                  <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Usuario" name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                  <input type="text" class="form-control" id="email" placeholder="Email" pattern=".*@.*" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                  <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" placeholder="Senha" required>
+                                </div>
+                                <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Cadastrar</button></div>
+                                <!--<div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+                                  Registered? <a href="#" class="text-dark fw-bold"> Create an
+                                    Account</a>
+                                </div>-->
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </ul>
               </div>
-            </div>   
-          </nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+
     </div>
     <div th:fragment = "footer">
         <!--footer-->
-        <footer class="position-sticky bg-dark text-white text-center p-1">
+        <footer class="position-sticky bg-black text-white text-center p-1">
             <h6>Copyright by Thiago da Silva Lima and colaborators</h6>
         </footer>
     </div>

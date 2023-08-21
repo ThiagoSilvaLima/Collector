@@ -3,14 +3,13 @@ package com.tcc.collecor.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,15 +31,9 @@ public class UserResources {
         List<User> list = uService.findAll();
         return ResponseEntity.ok().body(list);
     }
-    @PostMapping(value = "/insert", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE )
-    public ModelAndView register(@RequestParam("username") String param1, @RequestParam("email") String param2, @RequestParam("password") String param3) {
-        User user = new User();
-        user.setUsername(param1);
-        user.setEmail(param2);
-        user.setPassword(param3);
-        
-        User obj = uService.createUser(user);
-        ResponseEntity.ok().body(obj);
+    @PostMapping(value = "/insert")
+    public ModelAndView register(@ModelAttribute User user ) {
+        uService.createUser(user);
         
         return new ModelAndView("redirect:/perfil");
     }

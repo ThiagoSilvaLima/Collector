@@ -1,6 +1,6 @@
 body{
   border: none;
-  background-color: #DAE3E7;
+  background: #1E1455
 }
 .card-img-top{
   height: 400px;
@@ -11,7 +11,7 @@ body{
   height: 200px;
 }
 .faixa{
-  background-color: #E7803D;
+  background-color: #4B18B0;
   color: white;
   width: 120px;
 }
@@ -23,19 +23,21 @@ body{
 }
 .strip{
   width: 100%;
-  background-color: #E7803D;
+  background-color: #4B18B0;
   text-indent: 3%;
 }
-h3{
-  font-weight: bold;
-  font-size: 38px;
-  color: white;
+.card-background{
+  background-image:url('/imgs/favoritos/tabbar.jpg');
+}
+.text-profile{
+  color: #FFF;
+  font-family: Helvetica;
 }
 .card-content{
   width: 18rem;
 }
 .rounded-pill{
-  background-color: #E7803D;
+  background-color: #4B18B0;
   color: white;
   width: 120px;
 }
