@@ -14,10 +14,10 @@
 
 /* Modal Content */
 .modal-content {
-    background-color: #DAE3E7;
+    background-image: url('/imgs/favoritos/tabbar.jpg');
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 3px solid #7785FF;
     width: 60%; 
 }
 
@@ -45,7 +45,7 @@
     object-fit: cover;
 }
 .cardbody-color{
-    background-color: #083470;
+    background-color: transparent;
 }
 
 a{
