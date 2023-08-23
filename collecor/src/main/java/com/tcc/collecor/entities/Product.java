@@ -34,6 +34,7 @@ public class Product {
     private byte[] content;
     @Getter @Setter @Lob
     private byte[] image;
+    @Setter
     private Integer type;
     
     @JsonIgnore
@@ -51,7 +52,4 @@ public class Product {
     public TypeEnum getType() {
         return TypeEnum.valueOf(type);
     }
-    public void setType(TypeEnum type) {
-        this.type = type.getCode();
-    } 
 }

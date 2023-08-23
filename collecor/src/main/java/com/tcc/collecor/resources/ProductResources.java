@@ -38,11 +38,11 @@ public class ProductResources {
 
     @PostMapping("/uploadArquivo")
     public ModelAndView uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
-                                        @RequestParam("type") String type, @RequestParam("image") MultipartFile image) {
+                                        @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image) {
         if (file.isEmpty()) {
             return new ModelAndView("redirect:/upload");
         }
-        if (type == "Tipo de arquivo") {
+        if (type == null) {
             return new ModelAndView("redirect:/upload");
         }
         try {
@@ -50,6 +50,7 @@ public class ProductResources {
             product.setName(name);
             product.setDescription(description);
             product.setContent(file.getBytes());
+            product.setType(type);
             product.setImage(image.getBytes());
             pService.saveFile(product);
             return new ModelAndView("redirect:/perfil");
