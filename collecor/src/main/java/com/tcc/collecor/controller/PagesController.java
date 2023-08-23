@@ -24,7 +24,7 @@ public class PagesController {
     }
     @GetMapping("/home")
     public String home (){
-        return "home";
+        return "index";
     }
     @GetMapping("/upload")
     public String upload (){

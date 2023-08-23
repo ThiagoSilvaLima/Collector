@@ -17,30 +17,30 @@
     <div th:replace="~{fragments :: navbar}" ></div>
     
     <div class="container-fluid d-flex justify-content-center my-4" style="height: 88vh;">
-      <form  class="rounded-5 content p-5 col-12" style="height: 88vh;">
+      <form  class="rounded-5 content p-5 col-12" style="height: 88vh;" method="post" action="/products/uploadArquivo" enctype="multipart/form-data">
         <div class="row">
           <div class="caixa_upp d-flex flex-column justify-content-center align-items-center p-4 col-5 m-0" >
               <img src="/imgs/upload/bt upload icon.png" style="width: 275px; height: 269px" alt="" srcset="">
-              <a href="#" class=" btn rounded-5 text-white pt-3 btn_upp">FAÇA O UPLOAD DE UM ARQUIVO</a>
+              <input type="file" href="#" class=" btn rounded-5 text-white pt-3 btn_upp" name="file">
           </div>
           <div class="col-7">
             <div class="input-group mb-3">
               <span class="input-group-text text-white border-0" id="basic-addon1">Nome</span>
-              <input type="text" class="form-control" placeholder="Gatinho astronauta" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" placeholder="Gatinho astronauta" name="name" aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <div class="input-group py-5">
               <span class="input-group-text text-white border-0">Descrição</span>
-              <textarea class="form-control" style="height: 180px;"  placeholder="Imagem de um gatinho astronauta brincando com o planeta terra" aria-label="With textarea"></textarea>
+              <textarea class="form-control" style="height: 180px;" name="description"  placeholder="Imagem de um gatinho astronauta brincando com o planeta terra" aria-label="With textarea"></textarea>
             </div>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Tipo de arquivo</option>
+            <select class="form-select" aria-label="Default select example" name="type">
+              <option selected disabled>Tipo de arquivo</option>
               <option value="1">Video</option>
               <option value="2">Texto</option>
               <option value="3">Imagem</option>
             </select>
             <div class="caixa_upp d-flex flex-column justify-content-center align-items-center mt-5 p-4 col-5" >
               <img src="/imgs/upload/capa.png" style="width: 175px; height: 169px" alt="" srcset="">
-              <a href="#" class=" btn rounded-3 text-white pt-3 btn_capa">Capa</a>
+              <input type="file" href="#" class=" btn rounded-3 text-white pt-3 btn_capa" name="image">
             </div>
             <button type="submit" class="rounded-4 text-white mt-3" style="margin-left: 90%;">Enviar</button>
           </div>

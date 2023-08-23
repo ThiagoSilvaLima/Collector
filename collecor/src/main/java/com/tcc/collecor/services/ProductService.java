@@ -32,4 +32,8 @@ public class ProductService {
         return result;
     }
 
+    public void saveFile(Product p){
+        pRepositories.save(p);
+    }
+
 }

@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
@@ -29,8 +30,10 @@ public class Product {
     private String name;
     @Getter @Setter
     private String description;
-    @Getter @Setter
-    private String link;
+    @Getter @Setter @Lob
+    private byte[] content;
+    @Getter @Setter @Lob
+    private byte[] image;
     private Integer type;
     
     @JsonIgnore
@@ -42,7 +45,6 @@ public class Product {
     public Product(String name, String description, String link, Integer type) {
         this.name = name;
         this.description = description;
-        this.link = link;
         this.type = type;
     }
     //Getters and Setters
