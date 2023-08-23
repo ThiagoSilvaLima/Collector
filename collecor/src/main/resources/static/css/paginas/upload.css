@@ -1,0 +1,54 @@
+body{
+    border: none;
+    background-color: #0B0530;
+    height: 100vh;
+}
+.content{
+    background-image: url('/imgs/compartilhadas/space.jpg');
+    width: 98%;
+    height: 80vh;
+}
+.caixa_upp{
+    background-color: #4B18B0;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #4B18B0;
+}
+.btn_upp{
+    width: 501px;
+    height: 60px;
+    background: #041642;
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    
+    line-height: normal;
+}
+.btn_capa{
+    width: 100px;
+    height: 60px;
+    background: #041642;
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    
+    line-height: normal;
+}
+.input-group-text{
+    background-color: #041642;
+}
+
+button[type="submit"]{
+    background: #4B18B0;
+    width: 130px;
+    height: 48px;
+
+    font-family: Helvetica;
+    font-size: 20px;
+}
