@@ -1,14 +1,23 @@
 package com.tcc.collecor.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.tcc.collecor.repositories.ProductRepositories;
 
 @Controller
 public class PagesController {
-    
-    @GetMapping("/loja")
-    public String loja (){
-        return "loja";
+    @Autowired
+    ProductRepositories pRepo;
+
+    @GetMapping("loja")
+    public ModelAndView productList(Model model) {
+        ModelAndView mv = new ModelAndView("loja");
+        mv.addObject("products", pRepo.findAll());
+        return mv;
     }
     @GetMapping("/perfil")
     public String perfil (){

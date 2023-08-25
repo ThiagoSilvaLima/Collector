@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="PT_br">
+<html lang="PT_br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,10 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/paginas/loja.css">
-    <link rel="stylesheet" href="css/fragments/navbar.css">
-    <link rel="stylesheet" href="css/fragments/footerpage.css">
-    <link rel="stylesheet" href="css/fragments/popup.css"> 
+    <link rel="stylesheet" th:href="@{css/paginas/loja.css}">
+    <link rel="stylesheet" th:href="@{css/fragments/navbar.css}">
+    <link rel="stylesheet" th:href="@{css/fragments/footerpage.css}">
+    <link rel="stylesheet" th:href="@{css/fragments/popup.css}"> 
     <title>Perfil</title>
     <title>Loja</title>
 
@@ -49,68 +49,18 @@
           </div>
           <div class="colunmn col">
             <!--content-content-->
-            <div class="row justify-content-center gap-1 pt-3 px-3">
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="row col-12 justify-content-center">
+              <div class="pt-3 px-3" th:each="prods : ${products}" style="width: 18rem;">
+                <div class="card">
+                  <img th:src="'data:image/jpeg;base64,' + ${prods.image}" class="card-img-top pt-1" alt="...">
+                  <div class="card-body" style="height: 131px">
+                    <h5 class="card-title" th:text="${prods.name}"></h5>
+                    <p class="card-text" th:text="${prods.description}"></p>
+                  </div>
                 </div>
               </div>
             </div>
+            
             <!--pagination-->
             <div class="d-flex justify-content-center py-2" aria-label="...">
               <ul class="pagination">
@@ -130,7 +80,7 @@
               </ul>
             </div>
           </div>
-          </div>
+        </div>
       </div>
     <!--footer-->
     <div th:replace="~{fragments :: footer}"></div>
