@@ -3,22 +3,29 @@
    
 }
 .title {
-    position: absolute;
-    top: 145px;
-    right: 20px;
-    font-size: 80px;
+    font-size: 90px;
     color: white;
   }
 .p2{
-    position: absolute;
-    top: 140px;
-    right: 20px;
-    font-size: 40px;
-    color: white;
+    font-size: 20px;
 }
-
-  body{
+body{
     border: none;
     background: #1E1455
+  }  
+  .rounded-pill{
+    background-color: #4B18B0;
+    color: white;
+    width: 50px;
   }
-  
+.meio{
+  font-size: 35px;
+  background-color: #01002D;
+}
+.medio{
+  font-size: 35px;
+}
+.fim{
+  font-size: 35px;
+  background-color: #01002D;
+}
