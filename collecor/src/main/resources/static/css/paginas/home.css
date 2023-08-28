@@ -1,1 +1,24 @@
-background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+.princ{
+    background-image: url('/imgs/compartilhadas/space.jpg');
+   
+}
+.title {
+    position: absolute;
+    top: 145px;
+    right: 20px;
+    font-size: 80px;
+    color: white;
+  }
+.p2{
+    position: absolute;
+    top: 140px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+}
+
+  body{
+    border: none;
+    background: #1E1455
+  }
+  

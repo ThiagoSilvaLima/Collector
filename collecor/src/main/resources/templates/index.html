@@ -11,14 +11,27 @@
     <link rel="stylesheet" href="css/fragments/navbar.css">
     <link rel="stylesheet" href="css/fragments/footerpage.css">
     <link rel="stylesheet" href="css/fragments/popup.css"> 
-    <title>Perfil</title>
     <title>Home</title>
   </head>
   <body>
     <!--navbar-->
     <div th:replace="~{fragments :: navbar}"></div>
 
-
+    <div class="princ row px-5">
+      <div class="astro col-5">
+        <img src="imgs/home/astronauta.png" style="height: 100%; ">
+      </div>
+      <div class="title col-7 d-flex  align-items-center flex-column">
+        <p class="text-white">Visual Vision</p>
+        <div class="p2">
+          <p class="text-white">Sejam Bem Vindos(as)</p>
+          <a href="#" class="btn rounded-pill" style="height: 50px; width: 150px; font-size: 23px;">Entrar</a>
+        </div>
+        
+      </div>
+      
+    </div>
+         
 
     <!--footer-->
     <div th:replace="~{fragments :: footer}"></div>
