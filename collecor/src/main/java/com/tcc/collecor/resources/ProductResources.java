@@ -1,6 +1,9 @@
 package com.tcc.collecor.resources;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,8 @@ public class ProductResources {
     @Autowired
     ProductService pService;
 
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/uploads";
+
     @GetMapping
     public ResponseEntity<List<Product>> findAll () {
         List<Product> list = pService.findAll();
@@ -40,22 +45,30 @@ public class ProductResources {
     public ModelAndView uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
                                         @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image) {
         if (file.isEmpty()) {
-            return new ModelAndView("redirect:/upload");
+            return new ModelAndView("redirect:/perfil");
         }
         if (type == null) {
             return new ModelAndView("redirect:/upload");
         }
         try {
+            StringBuilder fileNames = new StringBuilder();
+
             Product product = new Product();
             product.setName(name);
             product.setDescription(description);
             product.setContent(file.getBytes());
             product.setType(type);
-            product.setImage(image.getBytes());
+
+            //thumbnail upload
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, image.getOriginalFilename());
+            fileNames.append(image.getOriginalFilename());
+            Files.write(fileNameAndPath, image.getBytes());
+            product.setImagePath("/collecor/uploads/"+image.getOriginalFilename());
+
             pService.saveFile(product);
-            return new ModelAndView("redirect:/perfil");
+            return new ModelAndView("redirect:/loja");
         } catch (IOException e) {
-            return new ModelAndView("redirect:/home");
+            return new ModelAndView("redirect:/upload");
         }
     }
 }

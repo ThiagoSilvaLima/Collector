@@ -52,7 +52,7 @@
             <div class="row col-12 justify-content-center">
               <div class="pt-3 px-3" th:each="prods : ${products}" style="width: 18rem;">
                 <div class="card">
-                  <img th:src="'data:image/jpeg;base64,' + ${prods.image}" class="card-img-top pt-1" alt="...">
+                  <img th:href="${prods.imagePath}" class="card-img-top pt-1" alt="...">
                   <div class="card-body" style="height: 131px">
                     <h5 class="card-title" th:text="${prods.name}"></h5>
                     <p class="card-text" th:text="${prods.description}"></p>

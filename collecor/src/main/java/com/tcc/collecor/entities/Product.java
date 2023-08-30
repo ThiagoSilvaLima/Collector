@@ -1,6 +1,5 @@
 package com.tcc.collecor.entities;
 
-import java.util.Base64;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -33,8 +32,8 @@ public class Product {
     private String description;
     @Getter @Setter @Lob
     private byte[] content;
-    @Getter @Setter @Lob
-    private byte[] image;
+    @Getter @Setter
+    private String imagePath;
     @Setter
     private Integer type;
     
@@ -52,9 +51,5 @@ public class Product {
     //Getters and Setters
     public TypeEnum getType() {
         return TypeEnum.valueOf(type);
-    }
-
-    public String getImageDataAsBase64() {
-        return Base64.getEncoder().encodeToString(image);
     }
 }
