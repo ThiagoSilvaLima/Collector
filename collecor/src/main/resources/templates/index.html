@@ -11,14 +11,55 @@
     <link rel="stylesheet" href="css/fragments/navbar.css">
     <link rel="stylesheet" href="css/fragments/footerpage.css">
     <link rel="stylesheet" href="css/fragments/popup.css"> 
-    <title>Perfil</title>
     <title>Home</title>
   </head>
   <body>
     <!--navbar-->
     <div th:replace="~{fragments :: navbar}"></div>
 
+    <div class="princ row px-5">
+      <div class="astro col-5">
+        <img src="imgs/home/astronauta.png" style="height: 100%; ">
+      </div>
+      <div class="title col-7 d-flex justify-content-center align-items-center flex-column">
+        <p class="text-white">Visual Vision</p>
+        <div class="p2">
+          <p class="text-white ">Sejam Bem Vindos(as)
+          <a href="#" class="btn rounded-pill text-white" role="button" style="height: 45px; width: 120px; font-size: 22.5px;">Entrar</a></p>
+        </div>
+      </div>
+    </div>
 
+    <div class="meio row px-5">
+       <div class="col-4">
+        <img src="imgs/home/img1.png"    style="width: 386px; height: 235px;">
+      </div>
+      <div class="text-white col-8 d-flex justify-content-center align-items-center ">
+        <p>Explore as categorias que estão em alta</p>
+      </div>
+    </div>
+
+    <div class="medio row px-5">
+     <div class="text-white col-8 d-flex justify-content-center align-items-center ">
+       <p>Compartilhe projetos em tempo real</p>
+     </div>
+     <div class="col-4">
+       <img src="imgs/home/img2.png"    style="width: 386px; height: 235px;">
+     </div>
+   </div>
+
+   
+   <div class="fim row px-5">
+    <div class="col-4">
+     <img src="imgs/home/img3.png"    style="width: 386px; height: 235px;">
+   </div>
+   <div class="text-white col-8 d-flex justify-content-center align-items-center ">
+     <p>Tenha acesso a todo conteúdo da comunidade a qualquer momento</p>
+   </div>
+ </div>
+      
+     
+         
 
     <!--footer-->
     <div th:replace="~{fragments :: footer}"></div>

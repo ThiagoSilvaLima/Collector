@@ -1,1 +1,31 @@
-background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+.princ{
+    background-image: url('/imgs/compartilhadas/space.jpg');
+   
+}
+.title {
+    font-size: 90px;
+    color: white;
+  }
+.p2{
+    font-size: 20px;
+}
+body{
+    border: none;
+    background: #1E1455
+  }  
+  .rounded-pill{
+    background-color: #4B18B0;
+    color: white;
+    width: 50px;
+  }
+.meio{
+  font-size: 35px;
+  background-color: #01002D;
+}
+.medio{
+  font-size: 35px;
+}
+.fim{
+  font-size: 35px;
+  background-color: #01002D;
+}
