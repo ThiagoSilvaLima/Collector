@@ -43,11 +43,14 @@ public class Product {
     //Constructors
     public Product() {
     }
-    public Product(String name, String description, String link, Integer type) {
+    public Product(String name, String description, byte[] content, String imagePath, Integer type) {
         this.name = name;
         this.description = description;
+        this.content = content;
+        this.imagePath = imagePath;
         this.type = type;
     }
+
     //Getters and Setters
     public TypeEnum getType() {
         return TypeEnum.valueOf(type);

@@ -27,7 +27,7 @@ public class ProductResources {
     @Autowired
     ProductService pService;
 
-    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/uploads";
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll () {
@@ -42,13 +42,13 @@ public class ProductResources {
     }
 
     @PostMapping("/uploadArquivo")
-    public ModelAndView uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
+    public String uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
                                         @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image) {
         if (file.isEmpty()) {
-            return new ModelAndView("redirect:/perfil");
+            return "Is empity";
         }
         if (type == null) {
-            return new ModelAndView("redirect:/upload");
+            return "type is null";
         }
         try {
             StringBuilder fileNames = new StringBuilder();
@@ -63,12 +63,12 @@ public class ProductResources {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, image.getOriginalFilename());
             fileNames.append(image.getOriginalFilename());
             Files.write(fileNameAndPath, image.getBytes());
-            product.setImagePath("/collecor/uploads/"+image.getOriginalFilename());
+            product.setImagePath("/uploads/"+image.getOriginalFilename());
 
             pService.saveFile(product);
-            return new ModelAndView("redirect:/loja");
+            return "/loja";
         } catch (IOException e) {
-            return new ModelAndView("redirect:/upload");
+            return e.getMessage();
         }
     }
 }
