@@ -49,13 +49,13 @@
           </div>
           <div class="colunmn col">
             <!--content-content-->
-            <div class="row col-12 justify-content-center">
-              <div class="pt-3 px-3" th:each="prods : ${products}" style="width: 18rem;">
+            <div class="row col-12 justify-content-center" style="height: 580px;">
+              <div class="pt-3 px-3" th:each="prods : ${products}" style="width: 350px; height: 400px;">
                 <div class="card">
-                  <img th:src="${prods.imagePath}" class="card-img-top" style="min-height: 290px" alt="...">
-                  <div class="card-body" style="height: 131px">
+                  <img th:src="${prods.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="...">
+                  <div class="card-body">
                     <h5 class="card-title" th:text="${prods.name}"></h5>
-                    <p class="card-text" th:text="${prods.description}"></p>
+                    <p class="card-text" th:text="${prods.description}" data-ls-module="charCounter" maxlength="200"></p>
                     <a href="#" class="btn mt-3 text-white" style="background-color: #4B18B0;">Baixar</a>
                   </div>
                 </div>
@@ -63,7 +63,7 @@
             </div>
             
             <!--pagination-->
-            <div class="d-flex justify-content-center py-2" aria-label="...">
+            <div class="d-flex justify-content-center py-5" aria-label="...">
               <ul class="pagination">
                 <li class="page-item">
                   <a class="page-link" href="#" aria-label="Previous">
