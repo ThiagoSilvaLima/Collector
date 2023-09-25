@@ -21,7 +21,10 @@
         <div class="row">
           <div class="caixa_upp d-flex flex-column justify-content-center align-items-center p-4 col-5 m-0" >
               <img src="/imgs/upload/bt upload icon.png" style="width: 275px; height: 269px" alt="" srcset="">
-              <input type="file" href="#" class=" btn rounded-5 text-white pt-3 btn_upp" name="file">
+              <div class="file btn btn-lg btn text-white">
+                Carregar arquivo
+                <input type="file" name="file"/>
+             </div>
           </div>
           <div class="col-7">
             <div class="input-group mb-3">
@@ -40,9 +43,13 @@
             </select>
             <div class="caixa_upp d-flex flex-column justify-content-center align-items-center mt-5 p-4 col-5" >
               <img src="/imgs/upload/capa.png" style="width: 175px; height: 169px" alt="" srcset="">
-              <input type="file" href="#" class=" btn rounded-3 text-white pt-3 btn_capa" name="image">
+             <div class="file btn btn-lg btn text-white">
+              Escolher capa
+              <input type="file" name="file"/>
+           </div>
             </div>
-            <button type="submit" class="rounded-4 text-white mt-3" style="margin-left: 90%;">Enviar</button>
+            
+            <button type="submit" class="rounded-4 text-white mt-3" style="margin-left: 70%;">Enviar</button>
           </div>
         </div>
       </form>
