@@ -31,7 +31,7 @@ public class Product {
     @Getter @Setter
     private String description;
     @Getter @Setter @Lob
-    private byte[] content;
+    private String contentPath;
     @Getter @Setter
     private String imagePath;
     @Setter
@@ -43,10 +43,10 @@ public class Product {
     //Constructors
     public Product() {
     }
-    public Product(String name, String description, byte[] content, String imagePath, Integer type) {
+    public Product(String name, String description, String content, String imagePath, Integer type) {
         this.name = name;
         this.description = description;
-        this.content = content;
+        this.contentPath = content;
         this.imagePath = imagePath;
         this.type = type;
     }

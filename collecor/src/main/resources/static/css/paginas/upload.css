@@ -52,12 +52,12 @@ button[type="submit"]{
     font-family: Helvetica;
     font-size: 20px;
 }
-.file {
+.inputBtn {
     position: relative;
     overflow: hidden;
     background-color: #0B0530;
 }
-input[name="file"] {
+input[type="file"] {
     position: absolute;
     font-size: 50px;
     opacity: 0;

@@ -32,6 +32,29 @@ public class ProductService {
         return result;
     }
 
+    public Product findById(@PathVariable Long id ) {
+        List<Product> obj = pRepositories.findAll();
+        Product result = null;
+        
+        for (Product p : obj) {
+            if(p.getId() == id){
+                result=p;
+            }
+        }
+        return result;
+    }
+    public Product findByname(@PathVariable String name ) {
+        List<Product> obj = pRepositories.findAll();
+        Product result = null;
+        
+        for (Product p : obj) {
+            if(p.getName() == name){
+                result=p;
+            }
+        }
+        return result;
+    }
+
     public void saveFile(Product p){
         pRepositories.save(p);
     }

@@ -26,7 +26,8 @@ public class ProductResources {
     @Autowired
     ProductService pService;
 
-    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
+    public static String DIRECTORYI = System.getProperty("user.dir") + "/src/main/resources/static/uploads/images";
+    public static String DIRECTORYC = System.getProperty("user.dir") + "/src/main/resources/static/uploads/contents";
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll () {
@@ -55,14 +56,19 @@ public class ProductResources {
             Product product = new Product();
             product.setName(name);
             product.setDescription(description);
-            product.setContent(file.getBytes());
             product.setType(type);
 
             //thumbnail upload
-            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, image.getOriginalFilename());
+            Path imageNameAndPath = Paths.get(DIRECTORYI, image.getOriginalFilename());
             fileNames.append(image.getOriginalFilename());
-            Files.write(fileNameAndPath, image.getBytes());
-            product.setImagePath("/uploads/"+image.getOriginalFilename());
+            Files.write(imageNameAndPath, image.getBytes());
+            product.setImagePath("/uploads/images/"+image.getOriginalFilename());
+
+            //file upload
+            Path fileNameAndPath = Paths.get(DIRECTORYC, file.getOriginalFilename());
+            fileNames.append(file.getOriginalFilename());
+            Files.write(fileNameAndPath, file.getBytes());
+            product.setContentPath("/uploads/contents/"+file.getOriginalFilename());
 
             pService.saveFile(product);
             return "/loja";

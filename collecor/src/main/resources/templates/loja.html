@@ -11,8 +11,7 @@
     <link rel="stylesheet" th:href="@{css/fragments/navbar.css}">
     <link rel="stylesheet" th:href="@{css/fragments/footerpage.css}">
     <link rel="stylesheet" th:href="@{css/fragments/popup.css}"> 
-    <title>Perfil</title>
-    <title>Loja</title>
+    <title>Biblioteca</title>
 
   </head>
   <body>
@@ -56,7 +55,7 @@
                   <div class="card-body">
                     <h5 class="card-title" th:text="${prods.name}"></h5>
                     <p class="card-text" th:text="${prods.description}" data-ls-module="charCounter" maxlength="200"></p>
-                    <a href="#" class="btn mt-3 text-white" style="background-color: #4B18B0;">Baixar</a>
+                    <a th:href="${prods.contentPath}" class="btn mt-3 text-white" style="background-color: #4B18B0;" th:download="${prods.name}">Baixar</a>
                   </div>
                 </div>
               </div>
