@@ -3,7 +3,8 @@ package com.tcc.collecor.enums;
 public enum TypeEnum {
     TEXTOS(1),
     VIDEO(2),
-    IMAGEM(3);
+    IMAGEM(3),
+    AUDIO(4);
 
     private int code;
     

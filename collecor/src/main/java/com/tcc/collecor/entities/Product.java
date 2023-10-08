@@ -55,4 +55,7 @@ public class Product {
     public TypeEnum getType() {
         return TypeEnum.valueOf(type);
     }
+    public Integer getCode() {
+        return this.type;
+    }
 }

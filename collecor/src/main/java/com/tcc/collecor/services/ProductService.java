@@ -55,6 +55,11 @@ public class ProductService {
         return result;
     }
 
+    public List<Product> findByKeyword(String keyword) {
+        return pRepositories.findByKeyword(keyword);
+    }
+
+
     public void saveFile(Product p){
         pRepositories.save(p);
     }

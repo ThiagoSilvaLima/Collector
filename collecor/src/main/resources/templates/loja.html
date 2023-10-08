@@ -26,12 +26,10 @@
           </div>
           <div class="col-12">       
             <div class="d-grid gap-2 tab-buttons">
-              <button type="button" class="btn py-0 btn-tab">Livros</button>
-              <button type="button" class="btn py-0 btn-tab">Imagens</button>
-              <button type="button" class="btn py-0 btn-tab">Videos</button>
-              <button type="button" class="btn py-0 btn-tab">Imagens</button>
-              <button type="button" class="btn py-0 btn-tab">Imagens</button>
-              <button type="button" class="btn py-0 btn-tab">Imagens</button>
+                <button type="submit" th:href="@{/loja/1}" class="btn py-0 btn-tab">Textos</button>
+                <button type="submit" name="type" value="2" class="btn py-0 btn-tab">Videos</button>
+                <button type="submit" value="3" class="btn py-0 btn-tab">Imagens</button>
+                <button type="submit" value="4" class="btn py-0 btn-tab">Musicas</button>
             </div>
           </div>
         </div>
@@ -40,22 +38,22 @@
           <!--searchbox-->
           <div class="row height justify-content-center mb-5">
             <div class="col-md-6">
-              <div class="search">
-                <input type="text" class="form-control form-input rounded-pill" placeholder="Encontrar algo...">
+              <form method="GET" th:action="@{/search}" class="search">
+                <input type="text" name="keyword"  th:value="${keyword}" class="form-control form-input rounded-pill" placeholder="Encontrar algo...">
                 <button class="btn btn-primary rounded-pill">Pesquisar</button>
-              </div>
+              </form>
             </div>
           </div>
           <div class="colunmn col">
             <!--content-content-->
             <div class="row col-12 justify-content-center" style="height: 580px;">
-              <div class="pt-3 px-3" th:each="prods : ${products}" style="width: 350px; height: 400px;">
+              <div class="pt-3 px-3" th:each="l : ${list}" style="width: 350px; height: 400px;">
                 <div class="card">
-                  <img th:src="${prods.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="...">
+                  <img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title" th:text="${prods.name}"></h5>
-                    <p class="card-text" th:text="${prods.description}" data-ls-module="charCounter" maxlength="200"></p>
-                    <a th:href="${prods.contentPath}" class="btn mt-3 text-white" style="background-color: #4B18B0;" th:download="${prods.name}">Baixar</a>
+                    <p class="card-title ls-1" th:text="${l.name}"></p>
+                    <p class="card-text" th:text="${l.description}" data-ls-module="charCounter" maxlength="200"></p>
+                    <a th:href="${l.contentPath}" class="btn mt-3 text-white" style="background-color: #4B18B0;" th:download="${l.name}">Baixar</a>
                   </div>
                 </div>
               </div>
