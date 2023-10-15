@@ -20,8 +20,8 @@ public class testConfig implements CommandLineRunner {
     @Override
 	public void run(String... args) throws Exception {
 
-    Product p1 = new Product("meninoecasa.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ante quis justo semper efficitur id in nulla. Donec imperdiet bibendum diam ut congue. Suspendisse potenti. Integer est augue.", "/uploads/contents/meninoecasa.jpg", "/uploads/contents/meninoecasa.jpg", 3);
-    Product p2 = new Product("Briga Feia _ Mais Amor E Menos Drama - Ao Vivo - Henrique & Juliano.mp3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ante quis justo semper efficitur id in nulla. Donec imperdiet bibendum diam ut congue. Suspendisse potenti. Integer est augue.", "/uploads/contents/Briga Feia _ Mais Amor E Menos Drama - Ao Vivo - Henrique & Juliano.mp3", "/uploads/contents/meninoecasa.jpg", 4);
+    Product p1 = new Product("menino e casa", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ante quis justo semper efficitur id in nulla. Donec imperdiet bibendum diam ut congue. Suspendisse potenti. Integer est augue.", "/uploads/contents/meninoecasa.jpg", "/uploads/contents/meninoecasa.jpg", 3);
+    Product p2 = new Product("Briga Feia _ Mais Amor E Menos Drama Henrique & Juliano", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ante quis justo semper efficitur id in nulla. Donec imperdiet bibendum diam ut congue. Suspendisse potenti. Integer est augue.", "/uploads/contents/Briga Feia _ Mais Amor E Menos Drama - Ao Vivo - Henrique & Juliano.mp3", "/uploads/contents/meninoecasa.jpg", 4);
     
     pRepositories.saveAll(Arrays.asList(p1,p2));
 	}

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.tcc.collecor.entities.Product;
 import com.tcc.collecor.services.ProductService;
@@ -42,14 +43,21 @@ public class ProductResources {
     }
 
     @PostMapping("/uploadArquivo")
-    public String uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
+    public ModelAndView uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
                                         @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image) {
         if (file.isEmpty()) {
-            return "Is empity";
+            return new ModelAndView("redirect:/upload");
         }
-        if (type == null) {
-            return "type is null";
-        }
+        if(type != null){
+            switch (type) {
+                case 3:
+                    image = file;    
+                    break;
+            default:
+                 break;     
+            }
+        }else{return new ModelAndView("redirect:/upload");}
+
         try {
             StringBuilder fileNames = new StringBuilder();
 
@@ -71,10 +79,9 @@ public class ProductResources {
             product.setContentPath("/uploads/contents/"+file.getOriginalFilename());
 
             pService.saveFile(product);
-            return "/loja";
+            return new ModelAndView("redirect:/loja");
         } catch (IOException e) {
-            return e.getMessage();
+            return new ModelAndView("redirect:/upload");
         }
     }
 }
-

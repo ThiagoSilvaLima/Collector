@@ -46,13 +46,13 @@
           </div>
           <div class="colunmn col">
             <!--content-content-->
-            <div class="row col-12 justify-content-center" style="height: 580px;">
-              <div class="pt-3 px-3" th:each="l : ${list}" style="width: 350px; height: 400px;">
+            <div class="row col-12 justify-content-center">
+              <div class="pt-3 px-3 mb-5" th:each="l : ${list}" style="width: 350px;">
                 <div class="card">
-                  <img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="...">
+                  <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
                   <div class="card-body">
-                    <p class="card-title ls-1" th:text="${l.name}"></p>
-                    <p class="card-text" th:text="${l.description}" data-ls-module="charCounter" maxlength="200"></p>
+                    <p class="card-title" th:text="${l.name}" style="font-size: larger; font-weight: 500;"></p>
+                    <p class="card-text" th:text="${l.description}" data-ls-module="charCounter"></p>
                     <a th:href="${l.contentPath}" class="btn mt-3 text-white" style="background-color: #4B18B0;" th:download="${l.name}">Baixar</a>
                   </div>
                 </div>
