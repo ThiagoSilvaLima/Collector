@@ -13,6 +13,7 @@ body{
     border-radius: 20px;
     border: 1px solid #000;
     background: #4B18B0;
+    height: 70vh;
 }
 .btn_upp{
     width: 501px;
@@ -48,6 +49,7 @@ button[type="submit"]{
     background: #4B18B0;
     width: 130px;
     height: 48px;
+    position: relative;
 
     font-family: Helvetica;
     font-size: 20px;
@@ -57,52 +59,75 @@ button[type="submit"]{
     overflow: hidden;
     background-color: #0B0530;
 }
-input[type="file"] {
-    position: absolute;
-    font-size: 50px;
-    opacity: 0;
-    right: 0;
-    top: 0; 
-}
 #picture__input {
     display: none;
-  }
-  
-  .picture {
-    width: 400px;
-    aspect-ratio: 16/9;
-    background: #041642;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0B0530;
-    border: 2px dashed currentcolor;
-    cursor: pointer;
-    font-family: sans-serif;
-    transition: color 300ms ease-in-out, background 300ms ease-in-out;
-    outline: none;
-    overflow: hidden;
-  }
-  
-  .picture:hover {
-    color: #0B0530;
-    background: #0B0530;
-  }
-  
-  .picture:active {
-    border-color: turquoise;
-    color: turquoise;
-    background: #eee;
-  }
-  
-  .picture:focus {
-    color: #0B0530;
-    background: #041642;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .picture__img {
-    max-width: 100%;
-  }
+  } 
+.picture {
+  width: 400px;
+  aspect-ratio: 16/9;
+  background: #041642;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  border: 2px dashed currentcolor;
+  border-color: #052881;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  outline: none;
+  overflow: hidden;
+}
+
+.picture:hover {
+  color: #0B0530;
+  background: #0B0530;
+}
+
+.picture:active {
+  border-color: turquoise;
+  color: turquoise;
+  background: #eee;
+}
+
+.picture:focus {
+  color: #0B0530;
+  background: #041642;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture__img {
+  max-width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input[type="file"] {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0; 
+}
+
+.input-wrapper label {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #0B0530;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-wrapper label:hover {
+  background-color: #0069d9;
+}
+
+#file-name {
+  background-color: #061333;
+  font-size: 20px;
+}
 
   
