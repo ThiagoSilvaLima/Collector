@@ -41,12 +41,13 @@
               <option value="2">Texto</option>
               <option value="3">Imagem</option>
             </select>
-            <div class="caixa_upp d-flex flex-column justify-content-center align-items-center mt-5 p-4 col-5" id="imageC">
-              <img src="/imgs/upload/capa.png" style="width: 175px; height: 169px" alt="" srcset="">
-             <div class="inputBtn btn btn-lg btn text-white">
-              Escolher capa
-              <input type="file" name="image"/>
-            </div>
+            <div class="caixa_upp d-flex flex-column justify-content-center align-items-center mt-5 p-3 col-5" id="imageC">
+              <img src="/imgs/upload/capa.png" style="width: 80px; height: 80px" alt="" srcset="">
+              <label class="picture" for="picture__input" tabIndex="0">
+                <span class="picture__image"></span>
+              </label>
+              
+              <input type="file" name="picture__input" id="picture__input">
           </div>
             <button type="submit" class="rounded-4 text-white mt-3" style="margin-left: 70%;">Enviar</button>
           </div>
@@ -73,6 +74,36 @@
       function whithoutImage() {
         document.getElementById("imageC").style.visibility = "visible";
       }
+
+      const inputFile = document.querySelector("#picture__input");
+const pictureImage = document.querySelector(".picture__image");
+const pictureImageTxt = "Choose an image";
+pictureImage.innerHTML = pictureImageTxt;
+
+inputFile.addEventListener("change", function (e) {
+  const inputTarget = e.target;
+  const file = inputTarget.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function (e) {
+      const readerTarget = e.target;
+
+      const img = document.createElement("img");
+      img.src = readerTarget.result;
+      img.classList.add("picture__img");
+
+      pictureImage.innerHTML = "";
+      pictureImage.appendChild(img);
+    });
+
+    reader.readAsDataURL(file);
+  } else {
+    pictureImage.innerHTML = pictureImageTxt;
+  }
+});
+
     </script>
   </body>
 </html>
