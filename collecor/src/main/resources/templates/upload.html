@@ -23,8 +23,8 @@
               <img src="/imgs/upload/bt upload icon.png" style="width: 200px; height: 200px" alt="" srcset="">
               <div class='input-wrapper text-white'>
                 <label for='input-file'> Selecionar um arquivo </label>
-                <input id='input-file' type='file' value='' onchange='updateFileName()' />
-                <span id='file-name' name="file" class="m-0"></span>
+                <input id='input-file' type='file' name="file" onchange='updateFileName()' />
+                <span id='file-name' class="m-0"></span>
               </div>
           </div>
           <div class="col-7 row">
@@ -47,7 +47,7 @@
                 <label class="picture rounded-4" for="picture__input" tabIndex="0">
                   <span class="picture__image"></span>
                 </label>
-                <input type="file" name="picture__input" id="picture__input">
+                <input type="file" name="image" id="picture__input">
               </div>
               <button type="submit" class="rounded-4 text-white" style="margin-left: 25%; margin-top: 25%;">Enviar</button>
             </div>
