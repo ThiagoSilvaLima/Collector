@@ -17,6 +17,7 @@ import com.tcc.collecor.controller.PagesController;
 import com.tcc.collecor.entities.Product;
 import com.tcc.collecor.entities.User;
 import com.tcc.collecor.services.UserService;
+import com.tcc.collecor.util.PasswordUtil;
 
 @RestController
 @RequestMapping("/users")
@@ -33,8 +34,10 @@ public class UserResources {
     }
     @PostMapping(value = "/insert")
     public ModelAndView register(@ModelAttribute User user ) {
-        uService.createUser(user);
+        String hashPass = PasswordUtil.encoder(user.getPassword());
+        user.setPassword(hashPass);
         
+        uService.createUser(user);
         return new ModelAndView("redirect:/perfil");
     }
     @PutMapping("/addFavorite/{userId}/{prodId}")

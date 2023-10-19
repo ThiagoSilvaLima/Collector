@@ -81,6 +81,7 @@
                           <div class="col-md-6 offset-md-3">
                             <div class="card my-5">              
                               <form class="card-body cardbody-color p-lg-5" style="background-color: #01002A;" method="post" action="/users/insert">
+                                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                                 <div class="alert alert-success visually-hidden" role="alert">
                                   Cadastro concluido como sucesso
                                 </div>
