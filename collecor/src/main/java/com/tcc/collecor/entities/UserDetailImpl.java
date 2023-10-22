@@ -5,17 +5,16 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class ProductUserDetailImpl implements UserDetails {
+public class UserDetailImpl implements UserDetails {
     private User user;
 
-    public ProductUserDetailImpl(User u){
+    public UserDetailImpl(User u){
         this.user = u;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
-        throw new UnsupportedOperationException("Unimplemented method 'getAuthorities'");
+        return null;
     }
 
     @Override

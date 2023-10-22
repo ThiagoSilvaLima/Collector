@@ -10,6 +10,10 @@ import com.tcc.collecor.entities.Product;
 
 public interface ProductRepositories extends JpaRepository<Product, Long> {
     //Custom query
-    @Query(value = "select * from product_tb s where lower(s.name) like LOWER('%' || :keyword || '%')", nativeQuery = true)   
+    @Query(value = "SELECT * FROM product_tb WHERE LOWER(name) LIKE LOWER(CONCAT('%', :keyword, '%'))", nativeQuery = true)  
     List<Product> findByKeyword(@Param("keyword") String keyword);
+    //Custom query
+    @Query(value = "SELECT * FROM product_tb WHERE type = :keywordBt", nativeQuery = true)  
+    List<Product> findByKeywordType(@Param("keywordBt") int keywordBt);
+    
 }

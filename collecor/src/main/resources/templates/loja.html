@@ -25,12 +25,13 @@
             <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start">
           </div>
           <div class="col-12">       
-            <div class="d-grid gap-2 tab-buttons">
-                <button type="submit" th:href="@{/loja/1}" class="btn py-0 btn-tab">Textos</button>
-                <button type="submit" name="type" value="2" class="btn py-0 btn-tab">Videos</button>
-                <button type="submit" value="3" class="btn py-0 btn-tab">Imagens</button>
-                <button type="submit" value="4" class="btn py-0 btn-tab">Musicas</button>
-            </div>
+              <form method="GET" th:action="@{/search2}">
+                <div class="d-grid gap-2 tab-buttons">
+                  <label for="image" class="text=bg-white">Teste</label>
+                  <input type="radio" id="image" name="keywordBt"  value="3" placeholder="Encontrar algo..."> 
+                  <button class="btn-primary rounded-pill">Ir</button>
+                </div>
+              </form>
           </div>
         </div>
         <!--content-->

@@ -2,6 +2,7 @@ package com.tcc.collecor.resources;
 
 import java.util.List;
 
+import org.apache.tomcat.util.digester.Rules;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tcc.collecor.controller.PagesController;
 import com.tcc.collecor.entities.Product;
 import com.tcc.collecor.entities.User;
+import com.tcc.collecor.enums.Perfil;
 import com.tcc.collecor.services.UserService;
 import com.tcc.collecor.util.PasswordUtil;
 
@@ -36,6 +38,7 @@ public class UserResources {
     public ModelAndView register(@ModelAttribute User user ) {
         String hashPass = PasswordUtil.encoder(user.getPassword());
         user.setPassword(hashPass);
+        user.setRules(Perfil.USER);
         
         uService.createUser(user);
         return new ModelAndView("redirect:/perfil");

@@ -46,6 +46,10 @@ public class PagesController {
     public String upload (){
         return "upload";
     }
+    @GetMapping("/login")
+    public String login (){
+        return "login";
+    }
     @RequestMapping(path = {"/","/search"})
     public String search(Product prod, Model model, String keyword) {
         keyword.toLowerCase();
@@ -54,5 +58,14 @@ public class PagesController {
             model.addAttribute("list", list);
         }
             return "loja";
-    }   
+    }
+    @RequestMapping(path = {"/","/search2"})
+    public String searchBt(Product prod, Model model, int keywordBt) {
+
+        if(keywordBt != 0) {
+            List<Product> list = pService.findByKeywordType(keywordBt);
+            model.addAttribute("list", list);
+        }
+        return "loja";
+    }     
 }
