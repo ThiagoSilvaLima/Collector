@@ -27,13 +27,22 @@
                     <a class="nav-link btnfavoritos" href="favoritos">Favoritos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link btnperfil" href="/perfil">Perfil <i class="ion-ios-arrow-down"></i></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link btnsobre" href="/upload">Publicar <i class="ion-ios-arrow-down"></i></a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link btnsobre" href="/sobre">Sobre <i class="ion-ios-arrow-down"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Perfil
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/perfil">Ver perfil</a></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>          
                   </li>
                   <li class="nav-item position-absolute end-0 mx-3 ">
                     <a class="nav-link" id="btnLogin">LOGIN <i class="ion-ios-arrow-down"></i></a>
@@ -49,17 +58,17 @@
                           <div class="row">
                             <div class="col-md-6 offset-md-3">
                               <div class="card my-5">
-                                <form class="p-lg-5" style="background-color: #01002A;">
+                                <form class="p-lg-5" method="post" th:action="@{/login}"  style="background-color: #01002A;">
                                   <div class="text-center d-flex justify-content-center" >
                                     <img src="imgs/compartilhadas/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                                       width="200px" alt="profile">
                                   </div>
                                   <div class="mb-3">
-                                    <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
+                                    <input type="text" class="form-control" name="username" aria-describedby="emailHelp"
                                       placeholder="Usuario">
                                   </div>
                                   <div class="mb-3">
-                                    <input type="password" class="form-control" id="password" placeholder="Senha">
+                                    <input type="password" class="form-control" name="password" placeholder="Senha">
                                   </div>
                                   <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Entrar</button></div>
                                   <!--<div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
