@@ -13,8 +13,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import org.apache.tomcat.util.digester.Rules;
-
 import com.tcc.collecor.enums.Perfil;
 
 import lombok.EqualsAndHashCode;

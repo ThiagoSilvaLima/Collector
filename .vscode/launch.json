@@ -9,6 +9,16 @@
             "projectName": "collecor",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CollecorSiteApplication<springdesk>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.tcc.collecor.CollecorSiteApplication",
+            "projectName": "springdesk",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
