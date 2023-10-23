@@ -24,14 +24,29 @@
           <div class="col-12">
             <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start">
           </div>
-          <div class="col-12">       
-              <form method="GET" th:action="@{/search2}">
-                <div class="d-grid gap-2 tab-buttons">
-                  <label for="image" class="text=bg-white">Teste</label>
-                  <input type="radio" id="image" name="keywordBt"  value="3" placeholder="Encontrar algo..."> 
-                  <button class="btn-primary rounded-pill">Ir</button>
-                </div>
-              </form>
+          <div class="container col-12">       
+            <ul>
+              <li>
+                <input type="radio" id="f-option" name="selector">
+                <label for="f-option">Imagem</label>
+                
+                <div class="check"></div>
+              </li>
+              
+              <li>
+                <input type="radio" id="s-option" name="selector">
+                <label for="s-option">Texto</label>
+                
+                <div class="check"><div class="inside"></div></div>
+              </li>
+              
+              <li>
+                <input type="radio" id="t-option" name="selector">
+                <label for="t-option">Vídeo</label>
+                
+                <div class="check"><div class="inside"></div></div>
+              </li>
+            </ul>
           </div>
         </div>
         <!--content-->
