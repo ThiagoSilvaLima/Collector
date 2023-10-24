@@ -18,7 +18,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tcc.collecor.entities.Product;
+import com.tcc.collecor.entities.User;
 import com.tcc.collecor.services.ProductService;
+import com.tcc.collecor.services.UserService;
 
 @RestController
 @RequestMapping("/products")
@@ -26,6 +28,9 @@ public class ProductResources {
         
     @Autowired
     ProductService pService;
+
+    @Autowired
+    UserService uService;
 
     public static String DIRECTORYI = System.getProperty("user.dir") + "/src/main/resources/static/uploads/images";
     public static String DIRECTORYC = System.getProperty("user.dir") + "/src/main/resources/static/uploads/contents";
@@ -44,7 +49,7 @@ public class ProductResources {
 
     @PostMapping("/uploadArquivo")
     public ModelAndView uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
-                                        @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image) {
+                                        @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image, @RequestParam("userName") String userName ) {
         if (file.isEmpty()) {
             return new ModelAndView("redirect:/upload");
         }
@@ -59,12 +64,16 @@ public class ProductResources {
         }else{return new ModelAndView("redirect:/upload");}
 
         try {
+
+            long u = uService.findByname(userName);
+
             StringBuilder fileNames = new StringBuilder();
 
             Product product = new Product();
             product.setName(name);
             product.setDescription(description);
             product.setType(type);
+            product.setIdUser(u);
 
             //thumbnail upload
             Path imageNameAndPath = Paths.get(DIRECTORYI, image.getOriginalFilename());

@@ -24,7 +24,7 @@
                     <a class="nav-link btnloja" href="/loja">Biblioteca</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link btnfavoritos" href="favoritos">Favoritos</a>
+                    <a class="nav-link btnfavoritos" href="favoritos" sec:authorize="isAuthenticated">Favoritos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link btnsobre" href="/sobre">Sobre <i class="ion-ios-arrow-down"></i></a>
@@ -38,17 +38,17 @@
                           </a>
                           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="/perfil">Ver perfil</a></li>
-                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="/logout" sec:authorize="isAuthenticated">Logout</a></li>
                           </ul>
                         </li>
                       </ul>
                     </div>          
                   </li>
                   <li class="nav-item position-absolute end-0 mx-3 ">
-                    <a class="nav-link" id="btnLogin">LOGIN <i class="ion-ios-arrow-down"></i></a>
+                    <a class="nav-link" id="btnLogin" sec:authorize="!isAuthenticated">LOGIN <i class="ion-ios-arrow-down"></i></a>
                   </li>
                   <li class="nav-item position-absolute end-0 mx-5">
-                    <a class="nav-link mx-5" id="btnSigin">SIGN IN <i class="ion-ios-arrow-down"></i></a>
+                    <a class="nav-link mx-5" id="btnSigin" sec:authorize="!isAuthenticated">SIGN IN <i class="ion-ios-arrow-down"></i></a>
                   </li>
                   <div id="loginModal" class="modal">
                     <!-- Modal content login -->

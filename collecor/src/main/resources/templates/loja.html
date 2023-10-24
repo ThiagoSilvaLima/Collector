@@ -7,10 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{css/paginas/loja.css}">
-    <link rel="stylesheet" th:href="@{css/fragments/navbar.css}">
-    <link rel="stylesheet" th:href="@{css/fragments/footerpage.css}">
-    <link rel="stylesheet" th:href="@{css/fragments/popup.css}"> 
+    <link rel="stylesheet" href="css/paginas/loja.css">
+    <link rel="stylesheet" href="css/fragments/navbar.css">
+    <link rel="stylesheet" href="css/fragments/footerpage.css">
+    <link rel="stylesheet" href="css/fragments/popup.css"> 
     <title>Biblioteca</title>
 
   </head>
@@ -25,22 +25,22 @@
             <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start">
           </div>
           <div class="container col-12">       
-            <ul>
-              <li>
+            <ul class="radioTabBar">
+              <li class="radioTabBar">
                 <input type="radio" id="f-option" name="selector">
                 <label for="f-option">Imagem</label>
                 
                 <div class="check"></div>
               </li>
               
-              <li>
+              <li class="radioTabBar">
                 <input type="radio" id="s-option" name="selector">
                 <label for="s-option">Texto</label>
                 
                 <div class="check"><div class="inside"></div></div>
               </li>
               
-              <li>
+              <li class="radioTabBar">
                 <input type="radio" id="t-option" name="selector">
                 <label for="t-option">Vídeo</label>
                 

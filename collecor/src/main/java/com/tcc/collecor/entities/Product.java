@@ -38,6 +38,8 @@ public class Product {
     private String imagePath;
     @Setter
     private Integer type;
+    @Getter @Setter
+    private Long idUser;
     
     @JsonIgnore
     @ManyToMany(mappedBy = "favoritesproducts")
@@ -45,12 +47,13 @@ public class Product {
     //Constructors
     public Product() {
     }
-    public Product(String name, String description, String content, String imagePath, Integer type) {
+    public Product(String name, String description, String content, String imagePath, Integer type, Long idUser) {
         this.name = name;
         this.description = description;
         this.contentPath = content;
         this.imagePath = imagePath;
         this.type = type;
+        this.idUser = idUser;
     }
 
     //Getters and Setters
