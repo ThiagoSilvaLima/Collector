@@ -64,7 +64,7 @@ div{
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 
-.container{
+.tabCont{
   display: block;
 
   margin: 2px;
@@ -182,7 +182,7 @@ input[type=radio]:checked ~ label{
 
 .signature .much-heart::before, 
 .signature .much-heart::after {
-    display: block;
+  display: block;
   content: '';
   position: absolute;
   margin: auto;

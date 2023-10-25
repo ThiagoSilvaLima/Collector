@@ -50,6 +50,10 @@ public class PagesController {
     public String login (){
         return "login";
     }
+    @GetMapping("/register")
+    public String register (){
+        return "register";
+    }
     @RequestMapping(path = {"/","/search"})
     public String search(Product prod, Model model, String keyword) {
         keyword.toLowerCase();
