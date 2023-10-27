@@ -24,29 +24,42 @@
           <div class="col-12">
             <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start">
           </div>
-          <div class="container tabCont col-12">       
-            <ul class="radioTabBar">
-              <li class="radioTabBar">
-                <input type="radio" id="f-option" name="selector">
-                <label for="f-option">Imagem</label>
-                
-                <div class="check"></div>
-              </li>
-              
-              <li class="radioTabBar">
-                <input type="radio" id="s-option" name="selector">
-                <label for="s-option">Texto</label>
-                
-                <div class="check"><div class="inside"></div></div>
-              </li>
-              
-              <li class="radioTabBar">
-                <input type="radio" id="t-option" name="selector">
-                <label for="t-option">Vídeo</label>
-                
-                <div class="check"><div class="inside"></div></div>
-              </li>
-            </ul>
+          <div class="container tabCont col-12">
+            <form  method="GET" th:action="@{/search2}">
+              <div class="radioTabBar">
+                <ul class="radioTabBar" >
+                  <li class="radioTabBar">
+                    <input type="radio" value="3" id="f-option" name="keywordBt">
+                    <label for="f-option">Imagem</label>
+                    
+                    <div class="check"></div>
+                  </li>
+                  
+                  <li class="radioTabBar">
+                    <input type="radio" id="s-option" value="2" name="keywordBt">
+                    <label for="s-option">Texto</label>
+                    
+                    <div class="check"><div class="inside"></div></div>
+                  </li>
+                  
+                  <li class="radioTabBar">
+                    <input type="radio" id="t-option" value="1" name="keywordBt">
+                    <label for="t-option">Vídeo</label>
+                    
+                    <div class="check"><div class="inside"></div></div>
+                  </li>
+
+                  <li class="radioTabBar">
+                    <input type="radio" id="t-option" value="4" name="keywordBt">
+                    <label for="t-option">Audio</label>
+                    
+                    <div class="check"><div class="inside"></div></div>
+                  </li>
+
+                </ul>
+                <button type="submit" class="btn-primary rounded-pill">Buscar</button>
+              </div>    
+            </form>   
           </div>
         </div>
         <!--content-->
