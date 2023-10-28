@@ -34,6 +34,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/search/**").permitAll()
                 .antMatchers("/search2/**").permitAll()
                 .antMatchers("/users/insert/**").permitAll()
+                .antMatchers("/register/**").permitAll()
                 .anyRequest().authenticated());
 
 

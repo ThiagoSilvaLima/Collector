@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/fragments/navbar.css">
     <link rel="stylesheet" href="css/fragments/footerpage.css">
     <link rel="stylesheet" href="css/fragments/popup.css"> 
-    <title>Entrar</title>
+    <title>Cadastrar</title>
 
     <style>
       .modal-content2 {
@@ -24,14 +24,14 @@
   <body>
     <!--navbar-->
     <div th:replace="~{fragments :: navbar}"></div>
-
+    
     <div class="princ d-flex justify-content-center">
       <div class="modal-content2">
         <div class="container">
             <div class="row">
               <div class="col-md-6 offset-md-3">
                 <div class="card my-5">
-                  <form class="p-lg-5" method="post" th:action="@{/login}"  style="background-color: #01002A;">
+                  <form class="p-lg-5" method="post" th:action="@{/users/insert}"  style="background-color: #01002A;">
                     <div class="text-center d-flex justify-content-center" >
                       <img src="imgs/compartilhadas/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                         width="200px" alt="profile">
@@ -41,11 +41,14 @@
                         placeholder="Usuario" required>
                     </div>
                     <div class="mb-3">
+                      <input type="text" class="form-control" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
                       <input type="password" class="form-control" name="password" placeholder="Senha" required>
                     </div>
                     <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Entrar</button></div>
                     <div id="emailHelp" class="form-text text-center mb-5 text-white"> Já é cadastrado? 
-                      <a href="/register" class="text-success text-decoration-underline fw-bold"> Registrar </a>
+                      <a href="/login" class="text-success text-decoration-underline fw-bold"> Entrar </a>
                     </div>
                   </form>
                 </div>
