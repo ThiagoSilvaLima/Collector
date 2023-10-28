@@ -65,7 +65,7 @@ public class ProductResources {
 
         try {
 
-            long u = uService.findByname(userName);
+            long u = uService.findByName(userName);
 
             StringBuilder fileNames = new StringBuilder();
 

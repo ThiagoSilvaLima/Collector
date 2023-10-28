@@ -50,7 +50,7 @@
                 </label>
                 <input type="file" name="image" id="picture__input">
               </div>
-              <input type="text" class="form-control" maxlength="55" placeholder="Gatinho astronauta" name="userName" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control visually-hidden" maxlength="55" placeholder="Gatinho astronauta" th:value="${#authentication.getName()}" name="userName" aria-label="Username" aria-describedby="basic-addon1">
               <button type="submit" class="rounded-4 text-white" style="margin-left: 25%; margin-top: 25%;">Enviar</button>
             </div>
           </div>

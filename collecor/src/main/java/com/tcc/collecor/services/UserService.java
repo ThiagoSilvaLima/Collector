@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.tcc.collecor.entities.Product;
 import com.tcc.collecor.entities.User;
@@ -44,7 +43,7 @@ public class UserService {
         return pr;
     }
 
-    public Long findByname(String name) {
+    public Long findByName(String name) {
         List<User> obj = uRepositories.findAll();
         User result = null;
         
