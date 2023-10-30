@@ -5,6 +5,7 @@
   "hints": {
     "no-inline-styles": "off",
     "axe/language": "off",
-    "axe/structure": "off"
+    "axe/structure": "off",
+    "axe/text-alternatives": "off"
   }
 }

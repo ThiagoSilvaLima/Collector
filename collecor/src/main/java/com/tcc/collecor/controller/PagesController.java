@@ -64,10 +64,13 @@ public class PagesController {
             return "loja";
     }
     @RequestMapping(path = {"/","/search2"})
-    public String searchBt(Product prod, Model model, int keywordBt) {
+    public String searchBt(Product prod, Model model, Integer keywordBt) {
 
-        if(keywordBt != 0) {
+        if(keywordBt != null) {
             List<Product> list = pService.findByKeywordType(keywordBt);
+            model.addAttribute("list", list);
+        }else{
+            List<Product> list = pService.findAll();
             model.addAttribute("list", list);
         }
         return "loja";

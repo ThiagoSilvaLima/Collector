@@ -22,10 +22,10 @@
         <!--tabBar-->
         <div class="col-1 p-1 tabbar" style="min-height: 90vh;">
           <div class="col-12">
-            <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start">
+            <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start"/>
           </div>
-          <div class="container tabCont col-12">
-            <form  method="GET" th:action="@{/search2}">
+          <div class="container col-12">
+            <form  method="GET" th:action="@{/search2}" class="tabCont">
               <div class="radioTabBar">
                 <ul class="radioTabBar" >
                   <li class="radioTabBar">
@@ -33,29 +33,25 @@
                     <label for="f-option">Imagem</label>
                     
                     <div class="check"></div>
-                  </li>
-                  
-                  <li class="radioTabBar">
-                    <input type="radio" id="s-option" value="2" name="keywordBt">
-                    <label for="s-option">Texto</label>
-                    
-                    <div class="check"><div class="inside"></div></div>
-                  </li>
-                  
+                  </li>                  
                   <li class="radioTabBar">
                     <input type="radio" id="t-option" value="1" name="keywordBt">
                     <label for="t-option">Vídeo</label>
                     
                     <div class="check"><div class="inside"></div></div>
                   </li>
-
                   <li class="radioTabBar">
-                    <input type="radio" id="t-option" value="4" name="keywordBt">
-                    <label for="t-option">Audio</label>
+                    <input type="radio" id="s-option" value="2" name="keywordBt">
+                    <label for="s-option">Texto</label>
+                    
+                    <div class="check"><div class="inside"></div></div>
+                  </li>                  
+                  <li class="radioTabBar">
+                    <input type="radio" id="x-option" value="4" name="keywordBt">
+                    <label for="x-option">Audio</label>
                     
                     <div class="check"><div class="inside"></div></div>
                   </li>
-
                 </ul>
                 <button type="submit" class="btn-primary rounded-pill">Buscar</button>
               </div>    
