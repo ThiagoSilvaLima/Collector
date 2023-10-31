@@ -32,6 +32,9 @@
               <div class="col-md-6 offset-md-3">
                 <div class="card my-5">
                   <form class="p-lg-5" method="post" th:action="@{/users/insert}"  style="background-color: #01002A;">
+                    <div class="alert alert-danger d-flex justify-content-center" th:if="${param.error}" id="loginF" role="alert">
+                      Insira os dados corretamente!
+                    </div> 
                     <div class="text-center d-flex justify-content-center" >
                       <img src="imgs/compartilhadas/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                         width="200px" alt="profile">
@@ -41,7 +44,7 @@
                         placeholder="Usuario" required>
                     </div>
                     <div class="mb-3">
-                      <input type="text" class="form-control" name="email" placeholder="Email" required>
+                      <input type="text" class="form-control" name="email" placeholder="Email" pattern=".*@.*" required>
                     </div>
                     <div class="mb-3">
                       <input type="password" class="form-control" name="password" placeholder="Senha" required>
