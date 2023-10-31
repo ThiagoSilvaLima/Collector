@@ -18,7 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tcc.collecor.entities.Product;
-import com.tcc.collecor.entities.User;
 import com.tcc.collecor.services.ProductService;
 import com.tcc.collecor.services.UserService;
 

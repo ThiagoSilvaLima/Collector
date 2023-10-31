@@ -126,8 +126,13 @@
           </div>
         </div>
       </nav>
-
     </div>
+    <div th:fragment= "empty">
+      <div class="text-center text-white">
+        <p class="fs-2 p-5">Nada Encontrado!<br>Você ainda não publicou nenhum arquivo.</p>
+      </div>
+    </div>
+
     <div th:fragment = "footer">
         <!--footer-->
         <footer class="position-sticky text-white text-center p-1">

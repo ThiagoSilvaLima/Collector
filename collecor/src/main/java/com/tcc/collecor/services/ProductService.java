@@ -43,6 +43,17 @@ public class ProductService {
         }
         return result;
     }
+    public List<Product> findByUserId(@PathVariable Long id ) {
+        List<Product> obj = pRepositories.findAll();
+        List<Product> result = new ArrayList<>();
+        
+        for (Product p : obj) {
+            if(p.getIdUser() == id){
+                result.add(p);
+            }
+        }
+        return result;
+    }
     public Product findByname(@PathVariable String name ) {
         List<Product> obj = pRepositories.findAll();
         Product result = null;

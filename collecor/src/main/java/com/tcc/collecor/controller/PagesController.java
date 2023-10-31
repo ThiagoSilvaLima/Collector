@@ -3,14 +3,19 @@ package com.tcc.collecor.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tcc.collecor.entities.Product;
 import com.tcc.collecor.repositories.ProductRepositories;
 import com.tcc.collecor.services.ProductService;
+import com.tcc.collecor.services.UserService;
 
 @Controller
 public class PagesController {
@@ -18,6 +23,8 @@ public class PagesController {
     ProductRepositories pRepo;
     @Autowired
     private ProductService pService;
+    @Autowired
+    private UserService uService;
 
     @GetMapping(path ={"loja"})
     public String productList(Model model) {
@@ -27,7 +34,16 @@ public class PagesController {
         return "loja";
     }
     @GetMapping("/perfil")
-    public String perfil (){
+    public String perfil(Model model){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        // Obtendo informações do usuário autenticado
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String username = userDetails.getUsername();
+
+        Long id = uService.findByName(username);
+        List<Product> list = pService.findByUserId(id);
+        model.addAttribute("list", list);
+
         return "profile";
     }
     @GetMapping("/favoritos")
