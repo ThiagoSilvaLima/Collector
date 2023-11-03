@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="css/paginas/loja.css">
     <link rel="stylesheet" href="css/fragments/navbar.css">
     <link rel="stylesheet" href="css/fragments/footerpage.css">
-    <link rel="stylesheet" href="css/fragments/popup.css"> 
+    <link rel="stylesheet" href="css/fragments/popup.css">
+
+    <script src="js/loja.js"></script>
+
     <title>Biblioteca</title>
 
   </head>
@@ -73,8 +76,16 @@
             <!--content-content-->
             <div class="row col-12 justify-content-center">
               <div class="pt-3 px-3 mb-5" th:each="l : ${list}" style="width: 350px;">
+                <p class="visually-hidden" th:id= "${l.id}"></p>
                 <div class="card">
                   <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
+                  <form method="post" th:action= "@{/fv/} +${#authentication.getName()} + '/' + ${l.id}" onsubmit="favoriteSuccess">
+                    <button type="submit" class="position-absolute top-0 end-0">
+                      <img src="imgs/loja/favoriteIcon.png" id="fvIcon" alt="">
+                    </button>
+                  </form>
+                  <div class="alert alert-success d-flex justify-content-center position-absolute" style="visibility: hidden;" id="result" role="Sucess" th:text="${reply}">
+                  </div>  
                   <div class="card-body">
                     <p class="card-title" th:text="${l.name}" style="font-size: larger; font-weight: 500;"></p>
                     <p class="card-text" th:text="${l.description}" data-ls-module="charCounter"></p>

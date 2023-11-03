@@ -220,3 +220,10 @@ input[type=radio]:checked ~ label{
   color: #232323;
   font-weight: bold;
 }
+#fvIcon{
+  height: 28px;
+}
+#fvIcon:hover{
+  transform: scale(2.1);
+  transition: all 0.5s;
+}

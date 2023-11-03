@@ -21,116 +21,71 @@
     <!--pageContent-->
     <div class="row">
       <!--tabBar-->
-      <div class="col-1 p-1 tabbar">
+      <div class="col-1 p-1 tabbar" style="min-height: 90vh;">
         <div class="col-12">
-          <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start">
+          <img src="imgs/favoritos/logo.png" class="img-fluid rounded float-start"/>
         </div>
-        <div class="col-12">       
-          <div class="d-grid gap-2 tab-buttons">
-            <button type="button" class="btn py-0 btn-tab">Livros</button>
-            <button type="button" class="btn py-0 btn-tab">Imagens</button>
-            <button type="button" class="btn py-0 btn-tab">Videos</button>
-            <button type="button" class="btn py-0 btn-tab">Imagens</button>
-            <button type="button" class="btn py-0 btn-tab">Imagens</button>
-            <button type="button" class="btn py-0 btn-tab">Imagens</button>
-          </div>
+        <div class="container col-12">
+          <form  method="GET" th:action="@{/searchFv2}" class="tabCont">
+            <div class="radioTabBar">
+              <ul class="radioTabBar" >
+                <li class="radioTabBar">
+                  <input type="radio" value="3" id="f-option" name="keywordBt">
+                  <label for="f-option">Imagem</label>
+                  
+                  <div class="check"></div>
+                </li>                  
+                <li class="radioTabBar">
+                  <input type="radio" id="t-option" value="1" name="keywordBt">
+                  <label for="t-option">Vídeo</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+                <li class="radioTabBar">
+                  <input type="radio" id="s-option" value="2" name="keywordBt">
+                  <label for="s-option">Texto</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>                  
+                <li class="radioTabBar">
+                  <input type="radio" id="x-option" value="4" name="keywordBt">
+                  <label for="x-option">Audio</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+              </ul>
+              <button type="submit" class="btn btn-primary rounded-pill">Buscar</button>
+            </div>    
+          </form>   
         </div>
       </div>
       <!--content-->
       <div class="col-11 pt-3 px-0" style="margin: 0px;"> 
         <!--searchbox-->
-        <div class="row height justify-content-center">
+        <div class="row height justify-content-center mb-5">
           <div class="col-md-6">
-            <div class="search">
-              <input type="text" class="form-control form-input rounded-pill" placeholder="Encontrar algo...">
+            <form method="GET" th:action="@{/searchFv}" class="search">
+              <input type="text" name="keyword"  th:value="${keyword}" class="form-control form-input rounded-pill" placeholder="Encontrar algo...">
               <button class="btn btn-primary rounded-pill">Pesquisar</button>
-            </div>
+            </form>
           </div>
         </div>
-        <div class="mt-3 mb-3" style="width: 100%; background-color: transparent">
+        <div class="mt-3 mb-3" style="width: 100%; background-color: #4B18B0">
           <p class="px-2" style="color: white; text-indent: 7%; font-size: 30px;">Favoritos</p>
         </div>
         <div class="colunmn col">
           <!--content-content-->
-          <div class="row justify-content-center gap-1 pt-3 px-3">
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="row col-12 justify-content-center">
+            <div class="pt-3 px-3 mb-5" th:each="l : ${list}" style="width: 350px;">
+              <div class="card">
+                <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
+                <div class="card-body">
+                  <p class="card-title" th:text="${l.name}" style="font-size: larger; font-weight: 500;"></p>
+                  <p class="card-text" th:text="${l.description}" data-ls-module="charCounter"></p>
+                  <a th:href="${l.contentPath}" class="btn mt-3 text-white" style="background-color: #4B18B0;" th:download="${l.name}">Baixar</a>
+                </div>
               </div>
             </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/favoritos/contents_image.jpg" class="card-img-top pt-1" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <!--pagination-->
-          <div class="d-flex justify-content-center py-2" aria-label="...">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
