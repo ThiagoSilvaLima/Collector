@@ -17,6 +17,8 @@ public class FavoriteService {
     FavoriteRepositories fRepositories;
     @Autowired
     ProductRepositories pRepositories;
+    @Autowired
+    ProductService pService;
 
     public List<Product> findByKeyword(Long userId, String keyword) {
         List<Long> l = fRepositories.findFavorites(userId);
@@ -36,7 +38,16 @@ public class FavoriteService {
             .filter(product -> l.contains(product.getId()))
             .collect(Collectors.toList());
 
-
         return filteredProducts;
+    }
+    public Boolean delete (Long idUser, Long idProd) {
+        List<Long> ids = fRepositories.findFavorites(idUser);
+        for (Long long1 : ids) {
+            if (long1 == idProd) {
+                fRepositories.delete(idProd,idUser);
+                return true;
+            }
+        }
+        return false;
     }
 }

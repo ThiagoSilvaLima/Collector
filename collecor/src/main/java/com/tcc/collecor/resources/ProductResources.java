@@ -18,8 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tcc.collecor.entities.Product;
+import com.tcc.collecor.repositories.ProductRepositories;
+import com.tcc.collecor.services.FavoriteService;
 import com.tcc.collecor.services.ProductService;
 import com.tcc.collecor.services.UserService;
+
 
 @RestController
 @RequestMapping("/products")
@@ -27,9 +30,13 @@ public class ProductResources {
         
     @Autowired
     ProductService pService;
-
     @Autowired
     UserService uService;
+    @Autowired
+    ProductRepositories pRepositories;
+    @Autowired
+    FavoriteService fService;
+
 
     public static String DIRECTORYI = System.getProperty("user.dir") + "/src/main/resources/static/uploads/images";
     public static String DIRECTORYC = System.getProperty("user.dir") + "/src/main/resources/static/uploads/contents";
@@ -91,5 +98,16 @@ public class ProductResources {
         } catch (IOException e) {
             return new ModelAndView("redirect:/upload");
         }
+    }
+
+    @GetMapping(value="delete/{uAuth}/{idProduct}")
+    public ModelAndView delete(@PathVariable String uAuth, @PathVariable Long idProduct, @RequestParam("image") String image, @RequestParam("content") String content) {
+        Product p =  pService.findById(idProduct);
+        if (p.getIdUser() == uService.findByName(uAuth)) {
+            pRepositories.delete(p);
+        }
+        pService.deleteFiles(image, content);
+
+        return new ModelAndView("redirect:/perfil");
     }
 }

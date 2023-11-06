@@ -44,8 +44,14 @@
         </div>
 
         <div class="pt-3 px-3 mb-5" th:each="l : ${list}" style="width: 350px;">
+          <p class="visually-hidden" th:id= "${l.id}"></p>
           <div class="card">
             <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
+            <form method="get" th:action= "@{/products/delete/} +${#authentication.getName()} + '/' + ${l.id}">
+              <input type="text" class="visually-hidden" th:value="${l.imagePath}" name="image">
+              <input type="text" class="visually-hidden" th:value="${l.contentPath}" name="content">
+              <button type="submit" class="position-absolute top-0 end-0"><img src="imgs/perfil/delete.png" id="deleteIcon" alt=""></button>
+            </form>
             <div class="card-body">
               <p class="card-title" th:text="${l.name}" style="font-size: larger; font-weight: 500;"></p>
               <p class="card-text" th:text="${l.description}" data-ls-module="charCounter"></p>

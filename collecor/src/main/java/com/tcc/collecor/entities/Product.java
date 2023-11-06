@@ -41,6 +41,7 @@ public class Product {
     @Getter @Setter
     private Long idUser;
     
+    @Getter
     @JsonIgnore
     @ManyToMany(mappedBy = "favoritesproducts")
     private List<User> userfavorite;

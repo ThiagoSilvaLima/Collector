@@ -1,5 +1,6 @@
 package com.tcc.collecor.services;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,5 +77,29 @@ public class ProductService {
 
     public void saveFile(Product p){
         pRepositories.save(p);
+    }
+
+    public void deleteFiles(String image, String content) {
+        // Caminho dos arquivos a serem deletados
+        String uploadPath = "src/main/resources/static/uploads/";
+        String imagePath = uploadPath + image;
+        String contentPath = uploadPath + content;
+    
+        try {
+            // Deleta o arquivo de imagem se existir
+            File imageFile = new File(imagePath);
+            if (imageFile.exists()) {
+                imageFile.delete();
+            }
+    
+            // Deleta o arquivo de conteúdo se existir
+            File contentFile = new File(contentPath);
+            if (contentFile.exists()) {
+                contentFile.delete();
+            }
+        } catch (Exception e) {
+            // Lidar com qualquer exceção ao tentar excluir os arquivos
+            e.printStackTrace();
+        }
     }
 }

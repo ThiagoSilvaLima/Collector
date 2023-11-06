@@ -41,3 +41,10 @@ body{
   color: white;
   width: 120px;
 }
+#deleteIcon{
+  height: 28px;
+}
+#deleteIcon:hover{
+  transform: scale(2.1);
+  transition: all 0.5s;
+}
