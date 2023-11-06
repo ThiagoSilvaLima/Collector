@@ -106,6 +106,7 @@ public class ProductResources {
         if (p.getIdUser() == uService.findByName(uAuth)) {
             pRepositories.delete(p);
         }
+        
         pService.deleteFiles(image, content);
 
         return new ModelAndView("redirect:/perfil");

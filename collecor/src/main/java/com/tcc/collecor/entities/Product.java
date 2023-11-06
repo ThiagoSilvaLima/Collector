@@ -48,10 +48,10 @@ public class Product {
     //Constructors
     public Product() {
     }
-    public Product(String name, String description, String content, String imagePath, Integer type, Long idUser) {
+    public Product(String name, String description, String contentPath, String imagePath, Integer type, Long idUser) {
         this.name = name;
         this.description = description;
-        this.contentPath = content;
+        this.contentPath = contentPath;
         this.imagePath = imagePath;
         this.type = type;
         this.idUser = idUser;

@@ -81,7 +81,7 @@ public class ProductService {
 
     public void deleteFiles(String image, String content) {
         // Caminho dos arquivos a serem deletados
-        String uploadPath = "src/main/resources/static/uploads/";
+        String uploadPath = "src/main/resources/static";
         String imagePath = uploadPath + image;
         String contentPath = uploadPath + content;
     
