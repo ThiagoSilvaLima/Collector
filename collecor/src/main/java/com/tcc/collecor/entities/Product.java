@@ -2,6 +2,7 @@ package com.tcc.collecor.entities;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +29,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter @Setter
     private Long id;
-    @Getter @Setter
+    @Getter @Setter @Column(unique = true)
     private String name;
     @Getter @Setter
     private String description;

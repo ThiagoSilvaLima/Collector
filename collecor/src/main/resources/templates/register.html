@@ -33,7 +33,7 @@
                 <div class="card my-5">
                   <form class="p-lg-5" method="post" th:action="@{/users/insert}"  style="background-color: #01002A;">
                     <div class="alert alert-danger d-flex justify-content-center" th:if="${param.error}" id="loginF" role="alert">
-                      Insira os dados corretamente!
+                      Nome de usuario já está existe!
                     </div> 
                     <div class="text-center d-flex justify-content-center" >
                       <img src="imgs/compartilhadas/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
@@ -49,7 +49,7 @@
                     <div class="mb-3">
                       <input type="password" class="form-control" name="password" placeholder="Senha" required>
                     </div>
-                    <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Entrar</button></div>
+                    <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Cadastrar</button></div>
                     <div id="emailHelp" class="form-text text-center mb-5 text-white"> Já é cadastrado? 
                       <a href="/login" class="text-success text-decoration-underline fw-bold"> Entrar </a>
                     </div>

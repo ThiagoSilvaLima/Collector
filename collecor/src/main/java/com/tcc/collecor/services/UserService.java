@@ -21,9 +21,8 @@ public class UserService {
     public List<User> findAll() {
         return uRepositories.findAll();
     }
-    public User createUser(User user) {
+    public void createUser(User user) {
         uRepositories.save(user);
-        return user;
     }
     public Product addFavorite(Long userId, Long prodId) {
         List<User> obj = uRepositories.findAll();

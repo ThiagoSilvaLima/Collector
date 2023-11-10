@@ -79,7 +79,7 @@
             <div class="pt-3 px-3 mb-5" th:each="l : ${list}" style="width: 350px;">
               <div class="card">
                 <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
-                <form method="post" th:action= "@{/fv/favorite/} +${#authentication.getName()} + '/' + ${l.id}" onsubmit="favoriteSuccess">
+                <form method="post" th:action= "@{/fv/favorite/} +${#authentication.getName()} + '/' + ${l.id}">
                   <button type="submit" class="position-absolute top-0 end-0">
                     <img src="imgs/favoritos/delete.png" id="deleteIcon" alt="">
                   </button>

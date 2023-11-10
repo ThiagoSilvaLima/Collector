@@ -130,4 +130,8 @@ button[type="submit"]{
   font-size: 20px;
 }
 
+#noSelect{
+  user-select: none;
+}
+
   

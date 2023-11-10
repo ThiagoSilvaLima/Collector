@@ -29,3 +29,7 @@ body{
   font-size: 35px;
   background-color: #01002D;
 }
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}

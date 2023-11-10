@@ -55,22 +55,24 @@ public class ProductResources {
 
     @PostMapping("/uploadArquivo")
     public ModelAndView uploadProduct(@RequestParam("file") MultipartFile file,  @RequestParam("name") String name, @RequestParam("description") String description,
-                                        @RequestParam("type") Integer type, @RequestParam("image") MultipartFile image, @RequestParam("userName") String userName ) {
-        if (file.isEmpty()) {
-            return new ModelAndView("redirect:/upload");
-        }
-        if(type != null){
-            switch (type) {
-                case 3:
-                    image = file;    
-                    break;
-            default:
-                 break;     
-            }
-        }else{return new ModelAndView("redirect:/upload");}
+                    @RequestParam("type") Integer type, @RequestParam(name ="image", required=false) MultipartFile image, @RequestParam("userName") String userName) {
 
         try {
-
+            if (file.isEmpty()) {
+            return new ModelAndView("redirect:/upload");
+            }
+            if(type != null){
+                switch (type) {
+                    case 3:
+                        image = file;    
+                        break;
+                    case 0:
+                        return new ModelAndView("redirect:/upload");   
+                default:
+                    break;     
+                }
+            }
+            
             long u = uService.findByName(userName);
 
             StringBuilder fileNames = new StringBuilder();
@@ -82,19 +84,29 @@ public class ProductResources {
             product.setIdUser(u);
 
             //thumbnail upload
+            if(image.isEmpty()) {
+                product.setImagePath("/imgs/compartilhadas/sem-capa.png");
+            }else{
             Path imageNameAndPath = Paths.get(DIRECTORYI, image.getOriginalFilename());
             fileNames.append(image.getOriginalFilename());
             Files.write(imageNameAndPath, image.getBytes());
             product.setImagePath("/uploads/images/"+image.getOriginalFilename());
-
+            }
+            
             //file upload
             Path fileNameAndPath = Paths.get(DIRECTORYC, file.getOriginalFilename());
             fileNames.append(file.getOriginalFilename());
             Files.write(fileNameAndPath, file.getBytes());
             product.setContentPath("/uploads/contents/"+file.getOriginalFilename());
 
-            pService.saveFile(product);
-            return new ModelAndView("redirect:/loja");
+            try {
+                pService.saveFile(product);
+                return new ModelAndView("redirect:/loja");
+            } catch (Exception e) {
+                ModelAndView mv = new ModelAndView("redirect:/upload");
+                mv.addObject("error",true);
+                return mv;
+            }
         } catch (IOException e) {
             return new ModelAndView("redirect:/upload");
         }

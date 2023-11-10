@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,13 +35,18 @@ public class UserResources {
         return ResponseEntity.ok().body(list);
     }
     @PostMapping(value = "/insert")
-    public ModelAndView register(@ModelAttribute User user ) {
+    public ModelAndView register(@ModelAttribute User user, Model model) {
+        ModelAndView mv = new ModelAndView("redirect:/register");
         String hashPass = PasswordUtil.encoder(user.getPassword());
         user.setPassword(hashPass);
         user.setRules(Perfil.USER);
-        
-        uService.createUser(user);
-        return new ModelAndView("redirect:/perfil");
+        try {
+            uService.createUser(user);
+            return new ModelAndView("redirect:/perfil"); 
+        } catch (Exception e) {
+            mv.addObject("error",true);
+            return mv;
+        }
     }
     @PutMapping("/addFavorite/{userId}/{prodId}")
     public ResponseEntity<Product> addFavorites(@PathVariable Long userId , @PathVariable Long prodId){

@@ -40,13 +40,13 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 
         http.formLogin(login -> login
                 .loginPage("/login")
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/perfil")
                 .permitAll());
 
         http.logout(logout -> logout
                 .logoutRequestMatcher(
                         new AntPathRequestMatcher("/logout", "GET")
-                ));
+                ).logoutSuccessUrl("/home"));
     }
 
     @Override
