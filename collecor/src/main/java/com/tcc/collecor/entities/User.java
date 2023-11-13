@@ -37,7 +37,7 @@ public class User implements Serializable{
     @Getter @Setter @Column(unique = true)
     private String email;
     @Getter @Setter
-    private byte[] imgProfile;
+    private String imgProfilePath;
     @Getter @Setter
     private String description;
     @Getter @Setter
