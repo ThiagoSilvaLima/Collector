@@ -23,12 +23,13 @@
     <!--pageContent-->
     <div class="card">
       <img  class="card-img-top" src="imgs\perfil\black.jpeg" alt="capa">
-      <div class="card-body card-background">
+      <div class="card-body card-background ">
+        <a class="position-absolute end-0 mx-2" id="btnEdit"><img src="/imgs/perfil/editBtn.png" style="height: 50px;"></a>
         <div class="d-flex justify-content-center">
-          <img class="rounded-circle profile" src="imgs/compartilhadas/icone perfil padrao.jpg" alt="">
+            <img class="rounded-circle profile" th:src="${pathImg}" alt="">
         </div>
         <div class="d-grid gap-1 pt-4 text-center">
-          <p class="m-b-0 text-profile" style="font-size: 60px;" sec:authentication="name"></p>
+          <p class="m-b-0 text-profile" style="font-size: 60px;" th:text="${name}"></p>
         </div>
       </div>
     </div>
@@ -39,52 +40,57 @@
         <a href="/upload" class="btn rounded-pill col-1" style="height: 40px; width: 120px; font-size: 20px;">Adicionar</a>
       </div>
     </div>
-
+    <div id="imgEditor" class="modal">
       <div class="container ">
         <div class="modal-content">
-          <span class="close2 close">&times;</span>
+          <span class="closeEditor">&times;</span>
           <div class="container">
             <div class="row">
-                <div class="card my-5" style="background-color: transparent;">     
-                  <form class="row gx-5" style="background-color: transparent;" method="post">
+                <div class="card mt-5" style="background-color: transparent;">     
+                  <form class="row gx-5" style="background-color: transparent;" method="post" th:action= "@{users/edit/} +${id}">
                     <div class="col-12 my-5">
-                      <input type="text" id="paths" class="visually-hidden">
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage()">
-                        <img src="/imgs/profileIcons/animeAstro.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="animeAstro" alt=""> 
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage2()">
-                        <img src="/imgs/profileIcons/caveira.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="caveira" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage3()">
-                        <img src="/imgs/profileIcons/zumbi.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="zumbi" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage4()">
-                        <img src="/imgs/profileIcons/animeAstro2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="animeAstro2" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage5()">
-                        <img src="/imgs/profileIcons/menina_caveira.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="menina_caveira" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage6()">
-                        <img src="/imgs/profileIcons/astroFofo.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofo" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage7()">
-                        <img src="/imgs/profileIcons/astroFofo2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofo2" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage8()">
-                        <img src="/imgs/profileIcons/astroFofa.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofa" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage9()">
-                        <img src="/imgs/profileIcons/astroFofa2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofa2" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage10()">
-                        <img src="/imgs/profileIcons/rino_1.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="rino_1" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage11()">
-                        <img src="/imgs/profileIcons/rino_2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="rino_2" alt="">
-                      </button>
-                      <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage12()">
-                        <img src="/imgs/profileIcons/zumbi2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="zumbi2" alt="">
-                      </button>
+                      <input type="text" id="paths" name="path" class="visually-hidden" required oninvalid="this.setCustomValidity ('Escolha uma imagem')">
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage()">
+                          <img src="/imgs/profileIcons/animeAstro.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="animeAstro" alt=""> 
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage4()">
+                          <img src="/imgs/profileIcons/animeAstro2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="animeAstro2" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage8()">
+                          <img src="/imgs/profileIcons/astroFofa.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofa" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage9()">
+                          <img src="/imgs/profileIcons/astroFofa2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofa2" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage6()">
+                          <img src="/imgs/profileIcons/astroFofo.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofo" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage7()">
+                          <img src="/imgs/profileIcons/astroFofo2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="astroFofo2" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage3()">
+                          <img src="/imgs/profileIcons/zumbi.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="zumbi" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage2()">
+                          <img src="/imgs/profileIcons/caveira.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="caveira" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage12()">
+                          <img src="/imgs/profileIcons/zumbi2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="zumbi2" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage5()">
+                          <img src="/imgs/profileIcons/menina_caveira.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="menina_caveira" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage10()">
+                          <img src="/imgs/profileIcons/rino_1.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="rino_1" alt="">
+                        </button>
+                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage11()">
+                          <img src="/imgs/profileIcons/rino_2.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="rino_2" alt="">
+                        </button>
+                        <hr class="m-5" style="color: aqua; size: 20px;">
+                        <div class="mb-3 row">
+                          <label for="name" class="text-white fw-bold">Novo nome de usuario:</label>
+                          <input type="text" class="form-control" name="userName" th:placeholder="'Atual: '+ ${name}" maxlength="50" id="name">
+                        </div>
                     </div>
                     <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Salvar</button></div>
                   </form>
@@ -93,7 +99,8 @@
           </div>
         </div>
       </div>
-      
+    </div>
+     
     <!--Content-Content-->
     <div class="colunmn col pt-4">
       <!--content-content-->
@@ -101,13 +108,12 @@
         <div th:if= "${#lists.isEmpty(list)}">
           <div th:replace="fragments :: empty"></div>
         </div>
-      </div> 
 
         <div class="pt-3 px-3 mb-5" th:each="l : ${list}" style="width: 350px;">
           <p class="visually-hidden" th:id= "${l.id}"></p>
           <div class="card">
             <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
-            <form method="get" th:action= "@{/products/delete/} +${#authentication.getName()} + '/' + ${l.id}">
+            <form method="get" th:action= "@{/products/delete/} +${name} + '/' + ${l.id}">
               <input type="text" class="visually-hidden" th:value="${l.imagePath}" name="image">
               <input type="text" class="visually-hidden" th:value="${l.contentPath}" name="content">
               <button type="submit" class="position-absolute top-0 end-0"><img src="imgs/perfil/delete.png" id="deleteIcon" alt=""></button>

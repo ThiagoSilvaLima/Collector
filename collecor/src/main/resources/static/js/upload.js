@@ -49,3 +49,4 @@ function updateFileName() {
     const fileNameSpan = document.getElementById('file-name');
     fileNameSpan.textContent = fileName;
 }
+

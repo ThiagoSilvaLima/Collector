@@ -244,3 +244,25 @@ function selectImage12() {
 
 
 }
+
+// Get the modal
+var modal = document.getElementById("imgEditor");
+// Get the button that opens the modal
+var btn = document.getElementById("btnEdit");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closeEditor")[0];
+
+btn.onclick = function() {
+    console.log("Button clicked");
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";       
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}

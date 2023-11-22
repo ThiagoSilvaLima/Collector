@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tcc.collecor.entities.Product;
+import com.tcc.collecor.entities.User;
 import com.tcc.collecor.repositories.FavoriteRepositories;
 import com.tcc.collecor.services.FavoriteService;
 import com.tcc.collecor.services.ProductService;
@@ -54,9 +55,13 @@ public class PagesController {
         String username = userDetails.getUsername();
 
         Long id = uService.findByName(username);
+        User user = uService.findById(id);
+
         List<Product> list = pService.findByUserId(id);
         model.addAttribute("list", list);
-
+        model.addAttribute("pathImg", user.getImgProfilePath());
+        model.addAttribute("name", user.getUsername());
+        model.addAttribute("id", user.getId());
         return "profile";
     }
     @GetMapping("/favoritos")

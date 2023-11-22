@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -52,5 +54,12 @@ public class UserResources {
     public ResponseEntity<Product> addFavorites(@PathVariable Long userId , @PathVariable Long prodId){
         Product obj = uService.addFavorite( userId, prodId);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @PostMapping("/edit/{id}")
+    public ModelAndView editPofie(@PathVariable long id , @RequestParam("path") String path, @RequestParam("userName") String username){
+        uService.editProfile(id, username, path);
+
+        return new ModelAndView("redirect:/perfil");
     }
 }

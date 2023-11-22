@@ -57,4 +57,31 @@ public class UserService {
         }
         return result.getId();
     }
+    public User findById(long id) {
+        List<User> obj = uRepositories.findAll();
+        User result = null;
+        
+        for (User u : obj) {
+            if(u.getId() == id){
+                result=u;
+            }
+        }
+        return result;
+    }
+
+    public void editProfile(long id, String userName, String imgPath){
+        User u = findById(id);
+        if (userName == "") {
+            u.setImgProfilePath(imgPath);
+        }
+        if (imgPath == "") {
+            u.setUsername(userName);
+        }
+        else{
+            u.setImgProfilePath(imgPath);
+            u.setUsername(userName);
+        }
+        uRepositories.save(u);
+    }
+    
 }
