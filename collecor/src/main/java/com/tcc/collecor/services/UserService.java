@@ -41,7 +41,6 @@ public class UserService {
         }
         return pr;
     }
-
     public Long findByName(String name) {
         List<User> obj = uRepositories.findAll();
         User result = null;

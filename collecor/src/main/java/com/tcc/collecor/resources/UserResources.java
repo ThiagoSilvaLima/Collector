@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,6 +41,7 @@ public class UserResources {
         String hashPass = PasswordUtil.encoder(user.getPassword());
         user.setPassword(hashPass);
         user.setRules(Perfil.USER);
+        user.setImgProfilePath("/imgs/profileIcons/icone perfil padrao.jpg");
         try {
             uService.createUser(user);
             return new ModelAndView("redirect:/perfil"); 

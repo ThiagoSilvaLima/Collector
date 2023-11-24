@@ -45,7 +45,7 @@
                     </div>          
                   </li>
                   <li class="nav-item position-absolute end-0 mx-3 ">
-                    <a class="nav-link" id="btnLogin">LOGIN <i class="ion-ios-arrow-down"></i></a>
+                    <a class="nav-link" id="btnLogin" sec:authorize="!isAuthenticated">LOGIN <i class="ion-ios-arrow-down"></i></a>
                   </li>
                   <li class="nav-item position-absolute end-0 mx-5">
                     <a class="nav-link mx-5" id="btnSigin" sec:authorize="!isAuthenticated">SIGN IN <i class="ion-ios-arrow-down"></i></a>
@@ -60,7 +60,7 @@
                               <div class="card my-5">
                                 <form class="p-lg-5" method="post" th:action="@{/login}"  style="background-color: #01002A;">
                                   <div class="text-center d-flex justify-content-center" >
-                                    <img src="imgs/compartilhadas/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                    <img src="/imgs/profileIcons/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                                       width="200px" alt="profile">
                                   </div>
                                   <div class="mb-3">
@@ -95,7 +95,7 @@
                                   Cadastro concluido como sucesso
                                 </div>
                                 <div class="text-center d-flex justify-content-center">
-                                  <img src="imgs/compartilhadas/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                  <img src="/imgs/profileIcons/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                                       width="200px" alt="profile">
                                 </div>
                                 
