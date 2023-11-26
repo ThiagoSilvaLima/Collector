@@ -88,7 +88,14 @@
                   </div>  
                   <div class="card-body">
                     <p class="card-title" th:text="${l.name}" style="font-size: larger; font-weight: 500;"></p>
-                    <p class="card-text" th:text="${l.description}" data-ls-module="charCounter"></p>
+                    <a class="btn text-white" style="background-color: blueviolet; width: 100%;" data-bs-toggle="collapse" href="#description" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="hideDescription()" id="btDesc">
+                      Exibir Descrição
+                    </a>
+                    <div class="collapse" id="description">
+                      <div class="card card-body">
+                        <p class="card-text" th:text="${l.description}" data-ls-module="charCounter"></p>
+                      </div>
+                    </div>
                     <a th:href="${l.contentPath}" class="btn mt-5 text-white" style="background-color: #4B18B0;" th:download="${l.name}">Baixar</a>
                   </div>
                 </div>
