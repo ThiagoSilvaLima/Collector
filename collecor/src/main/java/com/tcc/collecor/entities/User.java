@@ -39,7 +39,7 @@ public class User implements Serializable{
     @Getter @Setter
     private String imgProfilePath;
     @Getter @Setter
-    private String description;
+    private String coverImgProfilePath;
     @Getter @Setter
     private String password;
     @Getter @Setter

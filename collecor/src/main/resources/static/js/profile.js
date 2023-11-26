@@ -1,4 +1,6 @@
-const path = document.getElementById('paths');
+const path = document.getElementById('iconPath');
+const pathCover = document.getElementById('coverPath');
+
 const img = document.getElementById('animeAstro');
 const img2 = document.getElementById('caveira');
 const img3 = document.getElementById('zumbi');
@@ -12,6 +14,11 @@ const img10 = document.getElementById('rino_1');
 const img11 = document.getElementById('rino_2');
 const img12 = document.getElementById('zumbi2');
 
+//Cover
+const c1 = document.getElementById('rinoC');
+const c2 = document.getElementById('rinoC2');
+
+//BorderDisable
 function whithoutborder(){
     img.style.borderStyle = "none"
     img2.style.borderStyle = "none"
@@ -26,8 +33,13 @@ function whithoutborder(){
     img11.style.borderStyle = "none"
     img12.style.borderStyle = "none"
 }
+function whithoutborderCover(){
+    c1.style.borderStyle = "none"
+    c2.style.borderStyle = "none"
+}
 
-
+//select
+//Icon
 function selectImage() {
     if ((img.style.borderStyle = "solid") || (img2.style.borderStyle = "solid") || (img.style.borderStyle = "solid")) {
         whithoutborder();
@@ -244,6 +256,41 @@ function selectImage12() {
 
 
 }
+
+//Cover
+function selectCoverImage() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/rino.webp";
+
+        c1.style.borderStyle = "solid";
+        c1.style.borderWidth = "3px";
+        c1.style.borderColor = "red";
+    } else {
+        c1.style.borderStyle = "solid";
+        c1.style.borderWidth = "3px";
+        c1.style.borderColor = "red";
+    }
+    
+}
+function selectCoverImage2() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/rino.webp";
+
+        c2.style.borderStyle = "solid";
+        c2.style.borderWidth = "3px";
+        c2.style.borderColor = "red";
+    } else {
+        c2.style.borderStyle = "solid";
+        c2.style.borderWidth = "3px";
+        c2.style.borderColor = "red";
+    }
+
+}
+
 
 // Get the modal
 var modal = document.getElementById("imgEditor");

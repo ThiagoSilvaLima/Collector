@@ -33,7 +33,7 @@
                 <div class="card my-5">
                   <form class="p-lg-5" method="post" th:action="@{/users/insert}"  style="background-color: #01002A;">
                     <div class="alert alert-danger d-flex justify-content-center" th:if="${param.error}" id="loginF" role="alert">
-                      Nome de usuario já está existe!
+                      Nome de usuario ou email já registrado!
                     </div> 
                     <div class="text-center d-flex justify-content-center" >
                       <img src="/imgs/profileIcons/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"

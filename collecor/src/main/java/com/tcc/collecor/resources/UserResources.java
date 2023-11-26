@@ -41,7 +41,6 @@ public class UserResources {
         String hashPass = PasswordUtil.encoder(user.getPassword());
         user.setPassword(hashPass);
         user.setRules(Perfil.USER);
-        user.setImgProfilePath("/imgs/profileIcons/icone perfil padrao.jpg");
         try {
             uService.createUser(user);
             return new ModelAndView("redirect:/perfil"); 
@@ -57,8 +56,8 @@ public class UserResources {
     }
 
     @PostMapping("/edit/{id}")
-    public ModelAndView editPofie(@PathVariable long id , @RequestParam("path") String path, @RequestParam("userName") String username){
-        uService.editProfile(id, username, path);
+    public ModelAndView editPofie(@PathVariable long id , @RequestParam("iconPath") String iconPath, @RequestParam("coverPath") String coverPath){
+        uService.editProfile(id, coverPath, iconPath);
 
         return new ModelAndView("redirect:/perfil");
     }

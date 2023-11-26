@@ -60,6 +60,7 @@ public class PagesController {
         List<Product> list = pService.findByUserId(id);
         model.addAttribute("list", list);
         model.addAttribute("pathImg", user.getImgProfilePath());
+        model.addAttribute("coverPathImg", user.getCoverImgProfilePath());
         model.addAttribute("name", user.getUsername());
         model.addAttribute("id", user.getId());
         return "profile";

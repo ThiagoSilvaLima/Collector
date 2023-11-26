@@ -8,7 +8,7 @@ var btn = document.getElementById("btnLogin");
 var siginModal = document.getElementById("siginModal");
 
 // Get the button that opens the modal
-var btnSigin = document.getElementById("btnSigin");
+var btnSign = document.getElementById("btnSign");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -19,7 +19,7 @@ var spanS = document.getElementsByClassName("close2")[0];
 btn.onclick = function() {
     modal.style.display = "block";
 }
-btnSigin.onclick = function() {
+btnSign.onclick = function() {
     siginModal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal

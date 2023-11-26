@@ -108,7 +108,9 @@ public class ProductResources {
                 return mv;
             }
         } catch (IOException e) {
-            return new ModelAndView("redirect:/upload");
+            ModelAndView mv = new ModelAndView("redirect:/upload");
+            mv.addObject("error",true);
+            return mv;
         }
     }
 

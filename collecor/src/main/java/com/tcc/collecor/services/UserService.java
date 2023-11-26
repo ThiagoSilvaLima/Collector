@@ -22,6 +22,8 @@ public class UserService {
         return uRepositories.findAll();
     }
     public void createUser(User user) {
+        user.setImgProfilePath("/imgs/profileIcons/icone perfil padrao.jpg");
+        user.setCoverImgProfilePath("/imgs/profileCovers/spacePurple.jpg");
         uRepositories.save(user);
     }
     public Product addFavorite(Long userId, Long prodId) {
@@ -68,18 +70,12 @@ public class UserService {
         return result;
     }
 
-    public void editProfile(long id, String userName, String imgPath){
+    public void editProfile(long id, String coverImgPath, String imgPath){
         User u = findById(id);
-        if (userName == "") {
-            u.setImgProfilePath(imgPath);
-        }
-        if (imgPath == "") {
-            u.setUsername(userName);
-        }
-        else{
-            u.setImgProfilePath(imgPath);
-            u.setUsername(userName);
-        }
+
+        u.setImgProfilePath(imgPath);
+        u.setCoverImgProfilePath(coverImgPath);
+        
         uRepositories.save(u);
     }
     
