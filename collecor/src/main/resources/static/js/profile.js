@@ -400,7 +400,7 @@ function selectCoverImage8() {
     if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
         whithoutborderCover();
 
-        pathCover.value = "/imgs/profileCovers/spacee.jpg";
+        pathCover.value = "/imgs/profileCovers/space.jpg";
 
 
         c8.style.borderStyle = "solid";
@@ -417,7 +417,7 @@ function selectCoverImage9() {
     if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
         whithoutborderCover();
 
-        pathCover.value = "/imgs/profileCovers/lava.jpg";
+        pathCover.value = "/imgs/profileCovers/spaceLava.jpg";
 
         c9.style.borderStyle = "solid";
         c9.style.borderWidth = "3px";

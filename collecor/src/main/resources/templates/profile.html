@@ -49,7 +49,7 @@
                 <div class="card mt-5" style="background-color: transparent;">     
                   <form class="row gx-5" style="background-color: transparent;" method="post" th:action= "@{users/edit/} +${id}">
                     <div class="col-12 my-5">
-                      <input type="text" id="iconPath" name="iconPath" class="visually-hidden" required oninvalid="this.setCustomValidity ('Escolha uma imagem')">
+                      <input type="text" id="iconPath" name="iconPath" class="" required oninvalid="this.setCustomValidity ('Escolha uma imagem')">
                         <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectImage()">
                           <img src="/imgs/profileIcons/animeAstro.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle" id="animeAstro" alt=""> 
                         </button>
@@ -89,7 +89,7 @@
                         <hr class="m-5" style="color: aqua; size: 20px;">
                       <!--capa-->
                       <div class="row justify-content-center row">
-                        <input type="text" id="coverPath" name="coverPath" class="visually-hidden" required oninvalid="this.setCustomValidity ('Escolha uma imagem')">
+                        <input type="text" id="coverPath" name="coverPath" class="" required oninvalid="this.setCustomValidity ('Escolha uma imagem')">
                         <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage()">
                           <img src="/imgs/profileCovers/rino.webp" class="img-fluid img-thumbnail" style="height: 230px;" id="rinoC" alt=""> 
                         </button>
@@ -120,7 +120,7 @@
                         <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage10()">
                           <img src="/imgs/profileCovers/spaceP.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="space" alt=""> 
                         </button>
-                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage11()">
+                        <button type="button" class="border-0 btCover visually-hidden" style="background-color: transparent;" src="#" onclick="selectCoverImage11()">
                           <img src="/imgs/profileCovers/spaceP2.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="space2" alt=""> 
                         </button>
                         <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage12()">
@@ -129,7 +129,7 @@
                         <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage13()">
                           <img src="/imgs/profileCovers/zumbiG.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="zumbiG" alt=""> 
                         </button>
-                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage14()">
+                        <button type="button" class="border-0 btCover visually-hidden" style="background-color: transparent;" src="#" onclick="selectCoverImage14()">
                           <img src="/imgs/profileCovers/zumbiGirl.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="zumbiG2" alt=""> 
                         </button>
                       </div>
