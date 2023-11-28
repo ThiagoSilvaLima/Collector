@@ -19,6 +19,12 @@
         margin: auto;
         width: 50%; 
       }
+      #btnLogin{
+        visibility: hidden;
+      }
+      #btnSign{
+        visibility: hidden;
+      }
     </style>
   </head>
   <body>
@@ -32,8 +38,8 @@
               <div class="col-md-6 offset-md-3">
                 <div class="card my-5">
                   <form class="p-lg-5" method="post" th:action="@{/users/insert}"  style="background-color: #01002A;">
-                    <div class="alert alert-danger d-flex justify-content-center" th:if="${param.error}" id="loginF" role="alert">
-                      Nome de usuario ou email já registrado!
+                    <div class="alert alert-danger d-flex justify-content-center" th:if="${param.error}" th:text="${param.error}" id="loginF" role="alert">
+
                     </div> 
                     <div class="text-center d-flex justify-content-center" >
                       <img src="/imgs/profileIcons/icone perfil padrao.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
@@ -48,6 +54,9 @@
                     </div>
                     <div class="mb-3">
                       <input type="password" class="form-control" name="password" placeholder="Senha" required>
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" class="form-control" name="confirmPassword" placeholder="Confirme sua senha" required>
                     </div>
                     <div class="text-center"><button type="submit" class="btn btn-color btn-outline-success px-5 mb-5 w-100">Cadastrar</button></div>
                     <div id="emailHelp" class="form-text text-center mb-5 text-white"> Já é cadastrado? 

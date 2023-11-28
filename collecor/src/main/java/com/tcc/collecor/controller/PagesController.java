@@ -99,6 +99,10 @@ public class PagesController {
     public String register (){
         return "register";
     }
+    @GetMapping("/error")
+    public String error (){
+        return "errorPage";
+    }
     @RequestMapping(path = {"/","/search"})
     public String search(Product prod, Model model, String keyword) {
         keyword.toLowerCase();

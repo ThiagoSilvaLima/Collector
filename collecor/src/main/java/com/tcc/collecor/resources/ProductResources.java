@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,9 +85,16 @@ public class ProductResources {
             product.setIdUser(u);
 
             //thumbnail upload
-            if(image.isEmpty()) {
+            List<String> extensoesPermitidas = Arrays.asList(".jpg", ".jpeg", ".png", ".webp");
+            String nomeOriginal = image.getOriginalFilename();
+            if (image.isEmpty()) {
                 product.setImagePath("/imgs/compartilhadas/sem-capa.png");
-            }else{
+            } else if (image != null && extensoesPermitidas.stream().noneMatch(nomeOriginal::endsWith)) {
+                ModelAndView mv = new ModelAndView("redirect:/upload");
+                mv.addObject("error", "O tipo selecionado não é correto ou a capa fornecida tem formato incompatível");
+                return mv;
+            }
+            else{
             Path imageNameAndPath = Paths.get(DIRECTORYI, image.getOriginalFilename());
             fileNames.append(image.getOriginalFilename());
             Files.write(imageNameAndPath, image.getBytes());
@@ -104,12 +112,12 @@ public class ProductResources {
                 return new ModelAndView("redirect:/loja");
             } catch (Exception e) {
                 ModelAndView mv = new ModelAndView("redirect:/upload");
-                mv.addObject("error",true);
+                mv.addObject("error","Já existe arquivo com este nomeaa");
                 return mv;
             }
         } catch (IOException e) {
             ModelAndView mv = new ModelAndView("redirect:/upload");
-            mv.addObject("error",true);
+            mv.addObject("error","Erro inesperado, verifique se os campos foram preeenchidos corretamente");
             return mv;
         }
     }
