@@ -22,7 +22,7 @@
     <div th:replace="~{fragments :: navbar}" ></div>
     <!--pageContent-->
     <div class="card">
-      <img  class="card-img-top img-fluid" th:src="${coverPathImg}" alt="capa">
+      <img  class="card-img-top img-fluid" th:src="${coverPathImg}" alt="capa" style="">
       <div class="card-body card-background ">
         <a class="position-absolute end-0 mx-2" id="btnEdit"><img src="/imgs/perfil/editBtn.png" style="height: 50px;"></a>
         <div class="d-flex justify-content-center">
@@ -88,13 +88,49 @@
                         </button>
                         <hr class="m-5" style="color: aqua; size: 20px;">
                       <!--capa-->
-                      <div class="d-flex justify-content-center">
+                      <div class="row justify-content-center row">
                         <input type="text" id="coverPath" name="coverPath" class="visually-hidden" required oninvalid="this.setCustomValidity ('Escolha uma imagem')">
-                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectCoverImage()">
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage()">
                           <img src="/imgs/profileCovers/rino.webp" class="img-fluid img-thumbnail" style="height: 230px;" id="rinoC" alt=""> 
                         </button>
-                        <button type="button" class="border-0" style="background-color: transparent;" src="#" onclick="selectCoverImage2()">
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage2()">
                           <img src="/imgs/profileCovers/rino2.webp" class="img-fluid img-thumbnail" style="height: 230px;" id="rinoC2" alt="">
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage3()">
+                          <img src="/imgs/profileCovers/boy.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="boy" alt="">
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage4()">
+                          <img src="/imgs/profileCovers/boy2.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="boy2" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage5()">
+                          <img src="/imgs/profileCovers/girl.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="girl" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage6()">
+                          <img src="/imgs/profileCovers/skull.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="skull" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage7()">
+                          <img src="/imgs/profileCovers/skull2.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="skull2" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage8()">
+                          <img src="/imgs/profileCovers/space.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="spacee" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage9()">
+                          <img src="/imgs/profileCovers/spaceLava.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="lava" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage10()">
+                          <img src="/imgs/profileCovers/spaceP.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="space" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage11()">
+                          <img src="/imgs/profileCovers/spaceP2.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="space2" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage12()">
+                          <img src="/imgs/profileCovers/spacePurple.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="spaceP" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage13()">
+                          <img src="/imgs/profileCovers/zumbiG.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="zumbiG" alt=""> 
+                        </button>
+                        <button type="button" class="border-0 btCover" style="background-color: transparent;" src="#" onclick="selectCoverImage14()">
+                          <img src="/imgs/profileCovers/zumbiGirl.jpg" class="img-fluid img-thumbnail" style="height: 230px;" id="zumbiG2" alt=""> 
                         </button>
                       </div>
                     </div>

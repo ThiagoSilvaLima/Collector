@@ -17,6 +17,18 @@ const img12 = document.getElementById('zumbi2');
 //Cover
 const c1 = document.getElementById('rinoC');
 const c2 = document.getElementById('rinoC2');
+const c3 = document.getElementById('boy');
+const c4 = document.getElementById('boy2');
+const c5 = document.getElementById('girl');
+const c6 = document.getElementById('skull');
+const c7 = document.getElementById('skull2');
+const c8 = document.getElementById('spacee');
+const c9 = document.getElementById('lava');
+const c10 = document.getElementById('space');
+const c11 = document.getElementById('space2');
+const c12 = document.getElementById('spaceP');
+const c13 = document.getElementById('zumbiG');
+const c14 = document.getElementById('zumbiG2');
 
 //BorderDisable
 function whithoutborder(){
@@ -36,6 +48,18 @@ function whithoutborder(){
 function whithoutborderCover(){
     c1.style.borderStyle = "none"
     c2.style.borderStyle = "none"
+    c3.style.borderStyle = "none"
+    c4.style.borderStyle = "none"
+    c5.style.borderStyle = "none"
+    c6.style.borderStyle = "none"
+    c7.style.borderStyle = "none"
+    c8.style.borderStyle = "none"
+    c9.style.borderStyle = "none"
+    c10.style.borderStyle = "none"
+    c11.style.borderStyle = "none"
+    c12.style.borderStyle = "none"
+    c13.style.borderStyle = "none"
+    c14.style.borderStyle = "none"
 }
 
 //select
@@ -288,9 +312,207 @@ function selectCoverImage2() {
         c2.style.borderWidth = "3px";
         c2.style.borderColor = "red";
     }
+}
+function selectCoverImage3() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/boy.jpg";
+
+        c3.style.borderStyle = "solid";
+        c3.style.borderWidth = "3px";
+        c3.style.borderColor = "red";
+    } else {
+        c3.style.borderStyle = "solid";
+        c3.style.borderWidth = "3px";
+        c3.style.borderColor = "red";
+    }
 
 }
 
+function selectCoverImage4() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/boy2.jpg";
+
+        c4.style.borderStyle = "solid";
+        c4.style.borderWidth = "3px";
+        c4.style.borderColor = "red";
+    } else {
+        c4.style.borderStyle = "solid";
+        c4.style.borderWidth = "3px";
+        c4.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage5() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/girl.jpg";
+
+
+        c5.style.borderStyle = "solid";
+        c5.style.borderWidth = "3px";
+        c5.style.borderColor = "red";
+    } else {
+        c5.style.borderStyle = "solid";
+        c5.style.borderWidth = "3px";
+        c5.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage6() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/skull.jpg";
+
+
+        c6.style.borderStyle = "solid";
+        c6.style.borderWidth = "3px";
+        c6.style.borderColor = "red";
+    } else {
+        c6.style.borderStyle = "solid";
+        c6.style.borderWidth = "3px";
+        c6.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage7() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/skull2.jpg";
+
+        c7.style.borderStyle = "solid";
+        c7.style.borderWidth = "3px";
+        c7.style.borderColor = "red";
+    } else {
+        c7.style.borderStyle = "solid";
+        c7.style.borderWidth = "3px";
+        c7.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage8() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/spacee.jpg";
+
+
+        c8.style.borderStyle = "solid";
+        c8.style.borderWidth = "3px";
+        c8.style.borderColor = "red";
+    } else {
+        c8.style.borderStyle = "solid";
+        c8.style.borderWidth = "3px";
+        c8.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage9() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/lava.jpg";
+
+        c9.style.borderStyle = "solid";
+        c9.style.borderWidth = "3px";
+        c9.style.borderColor = "red";
+    } else {
+        c9.style.borderStyle = "solid";
+        c9.style.borderWidth = "3px";
+        c9.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage10() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/space.jpg";
+
+
+        c10.style.borderStyle = "solid";
+        c10.style.borderWidth = "3px";
+        c10.style.borderColor = "red";
+    } else {
+        c10.style.borderStyle = "solid";
+        c10.style.borderWidth = "3px";
+        c10.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage11() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/space2.jpg";
+
+        c11.style.borderStyle = "solid";
+        c11.style.borderWidth = "3px";
+        c11.style.borderColor = "red";
+    } else {
+        c11.style.borderStyle = "solid";
+        c11.style.borderWidth = "3px";
+        c11.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage12() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/spaceP.jpg";
+
+
+        c12.style.borderStyle = "solid";
+        c12.style.borderWidth = "3px";
+        c12.style.borderColor = "red";
+    } else {
+        c12.style.borderStyle = "solid";
+        c12.style.borderWidth = "3px";
+        c12.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage13() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/zumbiG.jpg";
+
+
+        c13.style.borderStyle = "solid";
+        c13.style.borderWidth = "3px";
+        c13.style.borderColor = "red";
+    } else {
+        c13.style.borderStyle = "solid";
+        c13.style.borderWidth = "3px";
+        c13.style.borderColor = "red";
+    }
+
+}
+function selectCoverImage14() {
+    if ((c1.style.borderStyle = "solid") || (c2.style.borderStyle = "solid") || (c1.style.borderStyle = "solid")) {
+        whithoutborderCover();
+
+        pathCover.value = "/imgs/profileCovers/zumbiG2.jpg";
+
+
+        c14.style.borderStyle = "solid";
+        c14.style.borderWidth = "3px";
+        c14.style.borderColor = "red";
+    } else {
+        c14.style.borderStyle = "solid";
+        c14.style.borderWidth = "3px";
+        c14.style.borderColor = "red";
+    }
+
+}
 
 // Get the modal
 var modal = document.getElementById("imgEditor");

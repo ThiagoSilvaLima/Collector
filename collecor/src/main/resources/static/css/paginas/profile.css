@@ -3,7 +3,7 @@ body{
   background: #1E1455
 }
 .card-img-top{
-  height: 500px;
+  height: 590px;
 }
 .profile{
   margin-top: -80px;
@@ -64,4 +64,7 @@ body{
 #btnEdit:hover,
 #btnEdit:focus{
   cursor: pointer;
+}
+.btCover{
+  width: 200px;
 }

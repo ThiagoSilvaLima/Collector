@@ -80,7 +80,7 @@
                 <div class="card">
                   <a th:href="${l.contentPath}" target="_blank"><img th:src="${l.imagePath}" class="card-img-top" style="height: 290px; width: 100%;" alt="..."></a>
                   <form method="post" th:action= "@{/fv/} +${#authentication.getName()} + '/' + ${l.id}" onsubmit="favoriteSuccess">
-                    <button type="submit" class="position-absolute top-0 end-0">
+                    <button type="submit" class="position-absolute top-0 end-0 border-0 m-1" style="background-color: transparent;">
                       <img src="imgs/loja/favoriteIcon.png" id="fvIcon" alt="">
                     </button>
                   </form>
